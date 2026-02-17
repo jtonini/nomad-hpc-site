@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .leaf { fill: #1e5631; stroke: #0d3320; stroke-width: 2; }
+      .leaf-light { fill: #2d7a46; }
+      .vein { stroke: #0d3320; stroke-width: 2; fill: none; }
+      .vein-thin { stroke: #0d3320; stroke-width: 1; fill: none; opacity: 0.6; }
+      .hole { fill: white; }
+      .node { fill: #c9a227; stroke: #1e3a5f; stroke-width: 1.5; }
+      .connection { stroke: #1e3a5f; stroke-width: 1.5; stroke-dasharray: 3,2; }
+      .text-brand { font-family: 'Georgia', serif; font-size: 14px; fill: #1e3a5f; letter-spacing: 3px; font-weight: bold; }
+      .text-sub { font-family: 'Georgia', serif; font-size: 8px; fill: #5a6c7d; letter-spacing: 1px; }
+    </style>
+  </defs>
+  
+  <!-- Main leaf shape -->
+  <path class="leaf" d="
+    M 100,180 
+    Q 60,170 40,140
+    Q 20,110 25,70
+    Q 30,40 55,25
+    Q 80,10 100,15
+    Q 120,10 145,25
+    Q 170,40 175,70
+    Q 180,110 160,140
+    Q 140,170 100,180
+    Z
+  "/>
+  
+  <!-- Leaf highlight -->
+  <path class="leaf-light" d="
+    M 100,175 
+    Q 70,165 55,140
+    Q 40,115 45,80
+    Q 50,55 70,40
+    Q 85,28 100,30
+    L 100,175
+    Z
+  " opacity="0.3"/>
+  
+  <!-- Main vein (spine) -->
+  <path class="vein" d="M 100,180 Q 100,100 100,20"/>
+  
+  <!-- Secondary veins -->
+  <path class="vein-thin" d="M 100,50 Q 70,55 50,45"/>
+  <path class="vein-thin" d="M 100,50 Q 130,55 150,45"/>
+  <path class="vein-thin" d="M 100,80 Q 60,90 40,80"/>
+  <path class="vein-thin" d="M 100,80 Q 140,90 160,80"/>
+  <path class="vein-thin" d="M 100,110 Q 55,120 35,115"/>
+  <path class="vein-thin" d="M 100,110 Q 145,120 165,115"/>
+  <path class="vein-thin" d="M 100,140 Q 65,150 50,145"/>
+  <path class="vein-thin" d="M 100,140 Q 135,150 150,145"/>
+  
+  <!-- Fenestrations (holes) representing compute nodes -->
+  <ellipse class="hole" cx="65" cy="65" rx="12" ry="18"/>
+  <ellipse class="hole" cx="135" cy="65" rx="12" ry="18"/>
+  <ellipse class="hole" cx="55" cy="110" rx="10" ry="15"/>
+  <ellipse class="hole" cx="145" cy="110" rx="10" ry="15"/>
+  <ellipse class="hole" cx="70" cy="145" rx="8" ry="12"/>
+  <ellipse class="hole" cx="130" cy="145" rx="8" ry="12"/>
+  
+  <!-- HPC nodes at fenestration centers -->
+  <circle class="node" cx="65" cy="65" r="5"/>
+  <circle class="node" cx="135" cy="65" r="5"/>
+  <circle class="node" cx="55" cy="110" r="4"/>
+  <circle class="node" cx="145" cy="110" r="4"/>
+  <circle class="node" cx="70" cy="145" r="3"/>
+  <circle class="node" cx="130" cy="145" r="3"/>
+  
+  <!-- Central head node -->
+  <circle cx="100" cy="95" r="8" fill="#c9a227" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="100" y="99" text-anchor="middle" style="font-family: Georgia; font-size: 10px; fill: #1e3a5f; font-weight: bold;">Ø</text>
+  
+  <!-- Connections from head to nodes -->
+  <line class="connection" x1="100" y1="95" x2="65" y2="65"/>
+  <line class="connection" x1="100" y1="95" x2="135" y2="65"/>
+  <line class="connection" x1="100" y1="95" x2="55" y2="110"/>
+  <line class="connection" x1="100" y1="95" x2="145" y2="110"/>
+  <line class="connection" x1="100" y1="95" x2="70" y2="145"/>
+  <line class="connection" x1="100" y1="95" x2="130" y2="145"/>
+</svg>

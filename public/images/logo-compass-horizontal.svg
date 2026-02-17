@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80">
+  <defs>
+    <style>
+      .ring { fill: none; stroke: #1e3a5f; stroke-width: 2; }
+      .needle-n { fill: #c9a227; }
+      .needle-s { fill: #1e3a5f; }
+      .center { fill: white; stroke: #1e3a5f; stroke-width: 1.5; }
+      .oslash { font-family: 'Georgia', serif; font-size: 18px; fill: #c9a227; font-weight: bold; }
+      .brand { font-family: 'Georgia', serif; font-size: 36px; fill: #1e3a5f; font-weight: bold; letter-spacing: 2px; }
+      .hpc { font-family: 'Georgia', serif; font-size: 36px; fill: #5a6c7d; font-weight: normal; }
+      .tagline { font-family: 'Georgia', serif; font-size: 10px; fill: #5a6c7d; letter-spacing: 2px; }
+      .divider { stroke: #1e3a5f; stroke-width: 1; }
+    </style>
+  </defs>
+  
+  <!-- Mini compass icon -->
+  <circle class="ring" cx="40" cy="40" r="28"/>
+  <polygon class="needle-n" points="40,15 37,40 43,40"/>
+  <polygon class="needle-s" points="40,65 43,40 37,40"/>
+  <circle class="center" cx="40" cy="40" r="10"/>
+  <text class="oslash" x="40" y="46" text-anchor="middle">Ø</text>
+  
+  <!-- Brand text -->
+  <text class="brand" x="85" y="48">N<tspan style="fill:#c9a227">Ø</tspan>MAD</text>
+  <text class="hpc" x="210" y="48">HPC</text>
+  
+  <!-- Tagline -->
+  <line class="divider" x1="85" y1="58" x2="280" y2="58"/>
+  <text class="tagline" x="85" y="72">NODE MONITORING AND DIAGNOSTICS</text>
+</svg>

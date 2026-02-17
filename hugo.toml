@@ -1,0 +1,34 @@
+baseURL = 'https://nomad-hpc.io/'
+languageCode = 'en-us'
+title = 'NØMAD-HPC'
+
+[params]
+  tagline = "NØde Monitoring And Diagnostics for HPC"
+  description = "Open-source monitoring, analysis, and diagnostics for High-Performance Computing clusters"
+  github = "https://github.com/jtonini/nomad"
+  docs = "https://jtonini.github.io/nomad/"
+  
+[markup.goldmark.renderer]
+  unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Features"
+    url = "#features"
+    weight = 1
+  [[menu.main]]
+    name = "Screenshots"
+    url = "#screenshots"
+    weight = 2
+  [[menu.main]]
+    name = "Get Started"
+    url = "#quickstart"
+    weight = 3
+  [[menu.main]]
+    name = "Documentation"
+    url = "https://jtonini.github.io/nomad/"
+    weight = 4
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/jtonini/nomad"
+    weight = 5

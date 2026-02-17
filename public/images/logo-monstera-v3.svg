@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200">
+  <defs>
+    <style>
+      .leaf-base { fill: #2d7a46; }
+      .leaf-dark { fill: #1a5c32; }
+      .leaf-light { fill: #4a9d64; }
+      .vein-main { stroke: #7cb88a; stroke-width: 3; fill: none; }
+      .vein-secondary { stroke: #6aad79; stroke-width: 1.5; fill: none; }
+      .text-brand { font-family: 'Georgia', serif; font-size: 32px; fill: #1e3a5f; letter-spacing: 2px; font-weight: bold; }
+      .text-oslash { fill: #c9a227; }
+      .text-sub { font-family: 'Georgia', serif; font-size: 11px; fill: #5a6c7d; letter-spacing: 3px; }
+    </style>
+  </defs>
+  
+  <!-- Stem (coming from right side) -->
+  <path d="M 320,105 Q 295,103 280,100" fill="none" stroke="#3d8a52" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Main leaf shape with lobes and fenestrations as cutouts -->
+  <!-- Using a single path with holes -->
+  <path class="leaf-base" fill-rule="evenodd" d="
+    M 280,100
+    
+    Q 270,70 250,50
+    Q 235,35 210,28
+    Q 190,22 170,30
+    Q 155,22 135,25
+    Q 115,20 95,30
+    Q 75,22 55,32
+    Q 35,38 25,55
+    Q 15,75 20,100
+    Q 15,125 25,145
+    Q 35,162 55,168
+    Q 75,178 95,170
+    Q 115,180 135,175
+    Q 155,178 170,170
+    Q 190,178 210,172
+    Q 235,165 250,150
+    Q 270,130 280,100
+    Z
+    
+    M 85,58 Q 70,65 68,85 Q 75,100 90,95 Q 100,80 85,58 Z
+    
+    M 130,45 Q 115,55 115,75 Q 125,90 140,82 Q 150,65 130,45 Z
+    
+    M 180,40 Q 165,50 165,72 Q 175,88 192,78 Q 202,60 180,40 Z
+    
+    M 225,52 Q 212,62 215,82 Q 228,95 242,85 Q 250,68 225,52 Z
+    
+    M 60,105 Q 48,115 50,135 Q 62,148 78,138 Q 85,120 60,105 Z
+    
+    M 105,120 Q 90,130 92,152 Q 105,165 122,155 Q 130,135 105,120 Z
+    
+    M 155,125 Q 140,135 142,158 Q 158,172 175,160 Q 182,140 155,125 Z
+    
+    M 205,118 Q 192,130 196,150 Q 212,162 228,150 Q 235,132 205,118 Z
+  "/>
+  
+  <!-- Darker shadow areas -->
+  <path class="leaf-dark" opacity="0.3" d="
+    M 280,100
+    Q 270,130 250,150
+    Q 235,165 210,172
+    Q 190,178 170,170
+    Q 155,178 135,175
+    Q 115,180 95,170
+    Q 75,178 55,168
+    Q 35,162 25,145
+    Q 15,125 20,100
+    L 280,100
+    Z
+  "/>
+  
+  <!-- Main vein (central) -->
+  <path class="vein-main" d="M 275,100 Q 200,100 150,100 Q 100,100 50,100 Q 30,100 22,100"/>
+  
+  <!-- Secondary veins going to each lobe -->
+  <g class="vein-secondary">
+    <!-- Top lobes -->
+    <path d="M 150,100 Q 140,75 130,50"/>
+    <path d="M 150,100 Q 165,70 178,45"/>
+    <path d="M 200,100 Q 210,75 225,55"/>
+    <path d="M 100,100 Q 90,75 82,55"/>
+    <path d="M 55,100 Q 45,80 35,65"/>
+    
+    <!-- Bottom lobes -->
+    <path d="M 150,100 Q 140,130 130,155"/>
+    <path d="M 150,100 Q 165,135 175,158"/>
+    <path d="M 200,100 Q 210,130 218,150"/>
+    <path d="M 100,100 Q 90,130 95,150"/>
+    <path d="M 55,100 Q 50,125 55,145"/>
+  </g>
+  
+  <!-- Lighter vein highlights -->
+  <path d="M 270,99 Q 150,99 25,99" stroke="#8fcf9e" stroke-width="1" fill="none" opacity="0.5"/>
+  
+  <!-- NOMAD-HPC text overlapping leaf -->
+  <text class="text-brand" x="170" y="108" text-anchor="middle">
+    N<tspan class="text-oslash">Ø</tspan>MAD-HPC
+  </text>
+  
+  <!-- Tagline below -->
+  <text class="text-sub" x="170" y="188" text-anchor="middle">MONITORING • ANALYSIS • DIAGNOSTICS</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100">
+  <defs>
+    <style>
+      .frame { fill: none; stroke: #1e3a5f; stroke-width: 3; }
+      .frame-inner { fill: none; stroke: #1e3a5f; stroke-width: 1; }
+      .corner { fill: #1e3a5f; }
+      .main-text { font-family: 'Rockwell', 'Courier New', monospace; font-size: 38px; font-weight: bold; fill: #1e3a5f; }
+      .slash { fill: #b8860b; }
+      .sub-text { font-family: 'Georgia', serif; font-size: 9px; fill: #1e3a5f; letter-spacing: 4px; }
+      .est { font-family: 'Georgia', serif; font-size: 10px; fill: #5a6c7d; font-style: italic; }
+    </style>
+  </defs>
+  
+  <!-- Outer frame -->
+  <rect class="frame" x="5" y="5" width="230" height="90" rx="3"/>
+  <rect class="frame-inner" x="12" y="12" width="216" height="76" rx="2"/>
+  
+  <!-- Corner accents -->
+  <rect class="corner" x="5" y="5" width="15" height="3"/>
+  <rect class="corner" x="5" y="5" width="3" height="15"/>
+  <rect class="corner" x="220" y="5" width="15" height="3"/>
+  <rect class="corner" x="232" y="5" width="3" height="15"/>
+  <rect class="corner" x="5" y="92" width="15" height="3"/>
+  <rect class="corner" x="5" y="80" width="3" height="15"/>
+  <rect class="corner" x="220" y="92" width="15" height="3"/>
+  <rect class="corner" x="232" y="80" width="3" height="15"/>
+  
+  <!-- Main text -->
+  <text class="main-text" x="120" y="55" text-anchor="middle">
+    N<tspan class="slash">Ø</tspan>MAD-HPC
+  </text>
+  
+  <!-- Subtitle -->
+  <text class="sub-text" x="120" y="75" text-anchor="middle">CLUSTER MONITORING</text>
+  
+  <!-- Est date -->
+  <text class="est" x="120" y="25" text-anchor="middle">— Est. 2024 —</text>
+</svg>

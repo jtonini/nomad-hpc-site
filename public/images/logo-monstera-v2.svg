@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280">
+  <defs>
+    <style>
+      .leaf { fill: #1e5631; }
+      .leaf-dark { fill: #0d3320; }
+      .leaf-light { fill: #2d7a46; }
+      .vein { stroke: #0d3320; stroke-width: 2.5; fill: none; }
+      .vein-thin { stroke: #0d3320; stroke-width: 1.5; fill: none; opacity: 0.7; }
+      .stem { fill: #0d3320; }
+      .text-brand { font-family: 'Georgia', serif; font-size: 28px; fill: #1e3a5f; letter-spacing: 3px; font-weight: bold; }
+      .text-oslash { fill: #c9a227; }
+      .text-sub { font-family: 'Georgia', serif; font-size: 10px; fill: #5a6c7d; letter-spacing: 3px; }
+    </style>
+    <!-- Clip path for fenestrations (holes) -->
+    <clipPath id="leaf-holes">
+      <path d="
+        M 120,200 
+        Q 70,188 45,150
+        Q 18,108 24,60
+        Q 32,25 65,10
+        Q 95,-2 120,5
+        Q 145,-2 175,10
+        Q 208,25 216,60
+        Q 222,108 195,150
+        Q 170,188 120,200
+        Z
+        
+        M 75,50 
+        Q 60,50 58,70 
+        Q 56,90 75,92 
+        Q 90,92 92,70 
+        Q 94,50 75,50 Z
+        
+        M 165,50 
+        Q 150,50 148,70 
+        Q 146,90 165,92 
+        Q 180,92 182,70 
+        Q 184,50 165,50 Z
+        
+        M 55,110 
+        Q 42,110 40,128 
+        Q 38,146 55,148 
+        Q 70,148 72,128 
+        Q 74,110 55,110 Z
+        
+        M 185,110 
+        Q 170,110 168,128 
+        Q 166,146 185,148 
+        Q 200,148 202,128 
+        Q 204,110 185,110 Z
+        
+        M 80,155 
+        Q 68,155 66,170 
+        Q 64,185 80,186 
+        Q 94,186 96,170 
+        Q 98,155 80,155 Z
+        
+        M 160,155 
+        Q 146,155 144,170 
+        Q 142,185 160,186 
+        Q 174,186 176,170 
+        Q 178,155 160,155 Z
+      " clip-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Stem -->
+  <path class="stem" d="M 115,200 Q 110,220 108,240 L 132,240 Q 130,220 125,200 Z"/>
+  
+  <!-- Main leaf with holes cut out -->
+  <g clip-path="url(#leaf-holes)">
+    <!-- Base leaf -->
+    <path class="leaf" d="
+      M 120,200 
+      Q 70,188 45,150
+      Q 18,108 24,60
+      Q 32,25 65,10
+      Q 95,-2 120,5
+      Q 145,-2 175,10
+      Q 208,25 216,60
+      Q 222,108 195,150
+      Q 170,188 120,200
+      Z
+    "/>
+    
+    <!-- Leaf highlight (left side) -->
+    <path class="leaf-light" d="
+      M 120,195 
+      Q 80,185 58,150
+      Q 35,115 40,70
+      Q 48,38 75,22
+      Q 98,10 120,12
+      L 120,195
+      Z
+    " opacity="0.25"/>
+    
+    <!-- Main vein (spine) -->
+    <path class="vein" d="M 120,200 C 120,150 120,80 120,8"/>
+    
+    <!-- Secondary veins radiating out -->
+    <path class="vein-thin" d="M 120,40 Q 85,48 55,35"/>
+    <path class="vein-thin" d="M 120,40 Q 155,48 185,35"/>
+    <path class="vein-thin" d="M 120,75 Q 75,88 40,75"/>
+    <path class="vein-thin" d="M 120,75 Q 165,88 200,75"/>
+    <path class="vein-thin" d="M 120,110 Q 70,125 35,115"/>
+    <path class="vein-thin" d="M 120,110 Q 170,125 205,115"/>
+    <path class="vein-thin" d="M 120,145 Q 80,158 55,150"/>
+    <path class="vein-thin" d="M 120,145 Q 160,158 185,150"/>
+    <path class="vein-thin" d="M 120,175 Q 95,182 75,178"/>
+    <path class="vein-thin" d="M 120,175 Q 145,182 165,178"/>
+  </g>
+  
+  <!-- NOMAD-HPC text overlapping leaf -->
+  <text class="text-brand" x="120" y="125" text-anchor="middle">
+    N<tspan class="text-oslash">Ø</tspan>MAD-HPC
+  </text>
+  
+  <!-- Tagline below -->
+  <text class="text-sub" x="120" y="262" text-anchor="middle">MONITORING • ANALYSIS • DIAGNOSTICS</text>
+</svg>

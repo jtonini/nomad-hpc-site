@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .outer-ring { fill: none; stroke: #1e3a5f; stroke-width: 4; }
+      .inner-ring { fill: none; stroke: #1e3a5f; stroke-width: 2; }
+      .cardinal { font-family: 'Georgia', serif; font-size: 10px; fill: #1e3a5f; font-weight: bold; }
+      .compass-needle-n { fill: #c9a227; }
+      .compass-needle-s { fill: #1e3a5f; }
+      .text-brand { font-family: 'Georgia', serif; font-size: 14px; fill: #1e3a5f; letter-spacing: 4px; font-weight: bold; }
+      .text-sub { font-family: 'Georgia', serif; font-size: 8px; fill: #5a6c7d; letter-spacing: 2px; }
+      .tick { stroke: #1e3a5f; stroke-width: 1.5; }
+      .tick-minor { stroke: #1e3a5f; stroke-width: 1; }
+    </style>
+  </defs>
+  
+  <!-- Outer ring -->
+  <circle class="outer-ring" cx="100" cy="100" r="95"/>
+  
+  <!-- Inner compass ring -->
+  <circle class="inner-ring" cx="100" cy="100" r="60"/>
+  
+  <!-- Brand text - top arc (r=72) -->
+  <path id="arc-top" fill="none" d="M 28,100 A 72,72 0 0,1 172,100"/>
+  <text class="text-brand">
+    <textPath href="#arc-top" startOffset="50%" text-anchor="middle">NØMAD-HPC</textPath>
+  </text>
+  
+  <!-- Tagline - bottom arc, slightly outward (r=76) -->
+  <path id="arc-bottom" fill="none" d="M 24,100 A 76,76 0 0,0 176,100"/>
+  <text class="text-sub">
+    <textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">MONITORING • ANALYSIS • DIAGNOSTICS</textPath>
+  </text>
+  
+  <!-- Compass tick marks - on the inner ring edge -->
+  <g class="ticks">
+    <!-- Major ticks (N,E,S,W) -->
+    <line class="tick" x1="100" y1="40" x2="100" y2="48"/>
+    <line class="tick" x1="160" y1="100" x2="152" y2="100"/>
+    <line class="tick" x1="100" y1="160" x2="100" y2="152"/>
+    <line class="tick" x1="40" y1="100" x2="48" y2="100"/>
+    <!-- Minor ticks (NE, SE, SW, NW) -->
+    <line class="tick-minor" x1="142" y1="58" x2="136" y2="64"/>
+    <line class="tick-minor" x1="142" y1="142" x2="136" y2="136"/>
+    <line class="tick-minor" x1="58" y1="142" x2="64" y2="136"/>
+    <line class="tick-minor" x1="58" y1="58" x2="64" y2="64"/>
+  </g>
+  
+  <!-- Cardinal directions - inside, away from ticks -->
+  <text class="cardinal" x="100" y="58" text-anchor="middle">N</text>
+  <text class="cardinal" x="144" y="104" text-anchor="middle">E</text>
+  <text class="cardinal" x="100" y="148" text-anchor="middle">S</text>
+  <text class="cardinal" x="56" y="104" text-anchor="middle">W</text>
+  
+  <!-- Compass needle pointing NE (rotated 45 degrees) -->
+  <g transform="rotate(45, 100, 100)">
+    <!-- North needle (gold) -->
+    <polygon class="compass-needle-n" points="100,62 96,100 104,100"/>
+    <!-- South needle (dark) -->
+    <polygon class="compass-needle-s" points="100,138 104,100 96,100"/>
+  </g>
+  
+  <!-- Compass center with Ø -->
+  <circle cx="100" cy="100" r="20" fill="white" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="100" y="108" text-anchor="middle" style="font-family: 'Georgia', serif; font-size: 22px; font-weight: bold; fill: #c9a227;">Ø</text>
+</svg>

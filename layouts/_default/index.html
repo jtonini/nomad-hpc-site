@@ -1,0 +1,221 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <img src="/images/logo-tron-badge.svg" alt="NØMAD-HPC Logo" class="hero-logo">
+    <h1>N<span class="highlight">Ø</span>MAD-HPC</h1>
+    <p class="tagline">Node Monitoring And Diagnostics</p>
+    <p class="description">
+      Open-source monitoring and diagnostics<br>
+      for High-Performance Computing clusters.
+    </p>
+    <p class="motto">"Where raw infrastructure metrics become actionable guidance."</p>
+    <div class="hero-buttons">
+      <a href="#quickstart" class="btn btn-primary">Get Started</a>
+      <a href="https://github.com/jtonini/nomad-hpc" class="btn btn-secondary">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+  <div class="section-header">
+    <h2>Why NØMAD?</h2>
+    <p>Monitor performance, diagnose issues, and educate users—all in one place.<br>
+    A complete solution for understanding and optimizing your HPC cluster.</p>
+  </div>
+  
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Real-time Monitoring</h3>
+      <p>Collect metrics from compute nodes, storage systems, and network infrastructure. 15+ collectors for comprehensive visibility.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🔍</div>
+      <h3>Smart Diagnostics</h3>
+      <p>Automated health analysis with actionable recommendations. Identify problems before users report them.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🧠</div>
+      <h3>Job Similarity Analysis</h3>
+      <p>Graph neural networks identify patterns in job behavior. Find anomalies by comparing jobs to their "neighbors".</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">📈</div>
+      <h3>Trend Detection</h3>
+      <p>Derivative-based analysis catches degradation early. Know when storage is filling or performance is dropping.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🎓</div>
+      <h3>Educational Feedback</h3>
+      <p>Help users become better HPC citizens. Proficiency scoring and suggestions improve resource efficiency.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🔔</div>
+      <h3>Flexible Alerts</h3>
+      <p>Email, Slack, and webhook notifications. Define thresholds that matter to your environment.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Screenshots Section -->
+<section class="screenshots" id="screenshots">
+  <div class="section-header">
+    <h2>See It In Action</h2>
+    <p>Real-time insights into your HPC cluster</p>
+  </div>
+  
+  <div class="screenshots-grid">
+    <div class="screenshot-item">
+      <img src="/images/dashboard.png" alt="NØMAD Dashboard">
+      <h3>Interactive Dashboard</h3>
+      <p>Real-time cluster overview with job network visualization and node status</p>
+    </div>
+    
+    <div class="screenshot-item">
+      <img src="/images/architecture.png" alt="Architecture">
+      <h3>Modular Architecture</h3>
+      <p>Collectors, analyzers, and alerts working together seamlessly</p>
+    </div>
+    
+    <div class="screenshot-item">
+      <img src="/images/edu_explain.png" alt="Educational Feedback">
+      <h3>Educational Feedback</h3>
+      <p>Help users improve their resource requests with actionable insights</p>
+    </div>
+    
+    <div class="screenshot-item">
+      <img src="/images/network.png" alt="Network Analysis">
+      <h3>Job Similarity Network</h3>
+      <p>Visualize relationships between jobs to identify patterns and anomalies</p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <h3>22,000+</h3>
+      <p>Lines of Code</p>
+    </div>
+    <div class="stat-item">
+      <h3>15+</h3>
+      <p>Data Collectors</p>
+    </div>
+    <div class="stat-item">
+      <h3>4</h3>
+      <p>Diagnostic Modules</p>
+    </div>
+    <div class="stat-item">
+      <h3>100%</h3>
+      <p>Open Source</p>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section class="tech-stack" id="tech">
+  <div class="section-header">
+    <h2>Transparent Tech Stack</h2>
+    <p>We believe in showing exactly how things work</p>
+  </div>
+  
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h4>Core</h4>
+      <ul>
+        <li>Python 3.9+</li>
+        <li>Click (CLI framework)</li>
+        <li>SQLite (embedded database)</li>
+        <li>TOML (configuration)</li>
+      </ul>
+    </div>
+    
+    <div class="tech-card">
+      <h4>Data Collection</h4>
+      <ul>
+        <li>SLURM (sacct, squeue)</li>
+        <li>vmstat, mpstat, iostat</li>
+        <li>nfsiostat, zpool</li>
+        <li>nvidia-smi (GPUs)</li>
+      </ul>
+    </div>
+    
+    <div class="tech-card">
+      <h4>Analysis</h4>
+      <ul>
+        <li>NumPy & Pandas</li>
+        <li>SciPy (statistics)</li>
+        <li>Derivative calculus (trends)</li>
+        <li>Graph similarity networks</li>
+      </ul>
+    </div>
+    
+    <div class="tech-card">
+      <h4>ML (Optional)</h4>
+      <ul>
+        <li>scikit-learn</li>
+        <li>PyTorch</li>
+        <li>PyTorch Geometric (GNN)</li>
+        <li>LSTM autoencoders</li>
+      </ul>
+    </div>
+    
+    <div class="tech-card">
+      <h4>Visualization</h4>
+      <ul>
+        <li>Vanilla JavaScript</li>
+        <li>React (dashboard)</li>
+        <li>D3.js (graphs)</li>
+        <li>Pure CSS animations</li>
+      </ul>
+    </div>
+    
+    <div class="tech-card">
+      <h4>Alerts</h4>
+      <ul>
+        <li>SMTP (email)</li>
+        <li>Slack webhooks</li>
+        <li>Generic webhooks</li>
+        <li>Custom backends</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Quickstart Section -->
+<section class="quickstart" id="quickstart">
+  <div class="section-header">
+    <h2>Quick Start</h2>
+    <p>Get up and running in minutes</p>
+  </div>
+  
+  <div class="quickstart-content">
+    <pre><code># Install from PyPI
+pip install nomad-hpc
+
+# Initialize configuration
+nomad init
+
+# Try the demo with synthetic data
+nomad demo
+
+# Or connect to your SLURM cluster
+nomad collect --daemon</code></pre>
+    
+    <p style="text-align: center; margin-top: 2rem;">
+      <a href="https://jtonini.github.io/nomad-hpc" class="btn btn-primary">Read the Documentation</a>
+    </p>
+  </div>
+</section>
+
+{{ end }}

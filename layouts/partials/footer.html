@@ -1,0 +1,26 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>NØMAD-HPC</h4>
+            <p>Open-source HPC monitoring built by administrators, for administrators.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links</h4>
+            <ul>
+                <li><a href="{{ .Site.Params.github }}">GitHub</a></li>
+                <li><a href="{{ .Site.Params.docs }}">Documentation</a></li>
+                <li><a href="https://pypi.org/project/nomad-hpc/">PyPI</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="{{ .Site.Params.github }}/issues">Report Issue</a></li>
+                <li><a href="#contact">Enterprise Support</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {{ now.Year }} João Tonini. Licensed under AGPL-3.0.</p>
+    </div>
+</footer>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .outer-ring { fill: none; stroke: #1e3a5f; stroke-width: 4; }
+      .inner-ring { fill: none; stroke: #1e3a5f; stroke-width: 2; }
+      .text-main { font-family: 'Palatino', 'Georgia', serif; font-size: 42px; font-weight: bold; fill: #1e3a5f; }
+      .text-sub { font-family: 'Palatino', 'Georgia', serif; font-size: 11px; fill: #1e3a5f; letter-spacing: 2px; }
+      .slash { fill: #c9a227; }
+      .node-dot { fill: #1e3a5f; }
+      .node-line { stroke: #1e3a5f; stroke-width: 1.5; }
+    </style>
+  </defs>
+  
+  <!-- Outer rings -->
+  <circle class="outer-ring" cx="100" cy="100" r="95"/>
+  <circle class="inner-ring" cx="100" cy="100" r="85"/>
+  
+  <!-- Main text: NØMAD -->
+  <text class="text-main" x="100" y="108" text-anchor="middle">
+    N<tspan class="slash">Ø</tspan>MAD
+  </text>
+  
+  <!-- Subtitle arc - top -->
+  <path id="arc-top" fill="none" d="M 30,100 A 70,70 0 0,1 170,100"/>
+  <text class="text-sub">
+    <textPath href="#arc-top" startOffset="50%" text-anchor="middle">HIGH-PERFORMANCE COMPUTING</textPath>
+  </text>
+  
+  <!-- Subtitle arc - bottom -->
+  <path id="arc-bottom" fill="none" d="M 170,100 A 70,70 0 0,1 30,100"/>
+  <text class="text-sub">
+    <textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">MONITORING · DIAGNOSTICS</textPath>
+  </text>
+  
+  <!-- Small decorative nodes (subtle HPC reference) -->
+  <circle class="node-dot" cx="100" cy="35" r="3"/>
+  <circle class="node-dot" cx="100" cy="165" r="3"/>
+</svg>

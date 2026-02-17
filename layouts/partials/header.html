@@ -1,0 +1,12 @@
+<header class="site-header">
+    <nav class="nav-container">
+        <a href="/" class="logo">
+            <span class="logo-symbol">N</span><span class="logo-slash">Ø</span><span class="logo-text">MAD</span>
+        </a>
+        <ul class="nav-links">
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

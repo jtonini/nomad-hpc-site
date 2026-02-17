@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .ring { fill: none; stroke: #1e3a5f; stroke-width: 3; }
+      .ring-thin { fill: none; stroke: #1e3a5f; stroke-width: 1.5; }
+      .star-main { fill: #1e3a5f; }
+      .star-accent { fill: #c9a227; }
+      .text-brand { font-family: 'Georgia', serif; font-size: 11px; fill: #1e3a5f; letter-spacing: 3px; font-weight: bold; }
+      .text-sub { font-family: 'Georgia', serif; font-size: 7px; fill: #5a6c7d; letter-spacing: 1.5px; }
+      .center-ring { fill: white; stroke: #1e3a5f; stroke-width: 2; }
+      .oslash { font-family: 'Georgia', serif; font-size: 32px; fill: #c9a227; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Outer rings -->
+  <circle class="ring" cx="100" cy="100" r="95"/>
+  <circle class="ring-thin" cx="100" cy="100" r="85"/>
+  
+  <!-- 8-point compass rose -->
+  <!-- Main 4 points (N,E,S,W) - tall -->
+  <polygon class="star-main" points="100,20 94,85 100,75 106,85"/>
+  <polygon class="star-accent" points="100,180 106,115 100,125 94,115"/>
+  <polygon class="star-main" points="180,100 115,94 125,100 115,106"/>
+  <polygon class="star-main" points="20,100 85,106 75,100 85,94"/>
+  
+  <!-- Intercardinal points (NE,SE,SW,NW) - shorter -->
+  <polygon class="star-accent" points="156,44 112,88 118,88 112,94" transform="rotate(0,100,100)"/>
+  <polygon class="star-main" points="156,156 112,112 118,106 112,112" transform="rotate(0,100,100)"/>
+  <polygon class="star-accent" points="44,156 88,112 94,118 88,112" transform="rotate(0,100,100)"/>
+  <polygon class="star-main" points="44,44 88,88 82,94 88,88" transform="rotate(0,100,100)"/>
+  
+  <!-- Center circle with Ø -->
+  <circle class="center-ring" cx="100" cy="100" r="30"/>
+  <text class="oslash" x="100" y="112" text-anchor="middle">Ø</text>
+  
+  <!-- Brand text - top arc -->
+  <path id="arc-t" fill="none" d="M 20,100 A 80,80 0 0,1 180,100"/>
+  <text class="text-brand">
+    <textPath href="#arc-t" startOffset="50%" text-anchor="middle">NØMAD-HPC</textPath>
+  </text>
+  
+  <!-- Tagline - bottom arc -->
+  <path id="arc-b" fill="none" d="M 180,108 A 80,80 0 0,1 20,108"/>
+  <text class="text-sub">
+    <textPath href="#arc-b" startOffset="50%" text-anchor="middle">CLUSTER MONITORING &amp; DIAGNOSTICS</textPath>
+  </text>
+</svg>
