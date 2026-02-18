@@ -395,9 +395,9 @@ pre code {
 
 .screenshots-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -609,4 +609,40 @@ pre code {
   .footer-container {
     grid-template-columns: 1fr;
   }
+}
+
+/* ─── Citation Section ─────────────────────────────────────────────────────── */
+
+.citation {
+  padding: 4rem 2rem;
+  background: var(--bg-dark);
+}
+
+.citation-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.citation-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.citation-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.citation-box .bibtex {
+  font-size: 0.8rem;
+  background: var(--bg-dark);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 0;
+  color: var(--cyan);
 }
