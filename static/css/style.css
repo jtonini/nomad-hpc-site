@@ -215,6 +215,7 @@ pre code {
   color: var(--text-dim);
   margin-bottom: 1.5rem;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 .hero .description {
@@ -301,10 +302,10 @@ pre code {
 
 .section-header p {
   color: var(--text-dim);
-  max-width: 550px;
+  max-width: 450px;
   margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.6;
   text-align: center;
 }
 
@@ -351,7 +352,8 @@ pre code {
   color: var(--text-dim);
   font-size: 0.9rem;
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: left;
 }
 
 /* ─── Stats Section ────────────────────────────────────────────────────────── */
@@ -364,12 +366,18 @@ pre code {
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
   text-align: center;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .stat-item h3 {
@@ -493,15 +501,19 @@ pre code {
 }
 
 .quickstart-content {
-  max-width: 550px;
+  max-width: 450px;
   margin: 0 auto;
-  text-align: center;
+}
+
+.quickstart pre {
+  text-align: left;
 }
 
 .quickstart pre {
   font-size: 0.95rem;
   border-color: var(--cyan);
   box-shadow: 0 0 15px var(--cyan-glow);
+  text-align: left;
 }
 
 .quickstart code {
@@ -517,13 +529,21 @@ pre code {
 }
 
 .footer-container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
   margin-bottom: 2rem;
+}
+
+.footer-section {
   text-align: center;
+}
+
+.footer-section ul {
+  display: inline-block;
+  text-align: left;
 }
 
 .footer-section h4 {
@@ -539,8 +559,8 @@ pre code {
 .footer-section p {
   color: var(--text-dim);
   font-size: 0.85rem;
-  line-height: 1.5;
-  text-align: center;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .footer-section ul {
