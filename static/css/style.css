@@ -530,17 +530,17 @@ pre code {
 }
 
 .footer-container {
-  max-width: 900px;
+  max-width: 750px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
-  gap: 5rem;
+  justify-content: space-between;
   margin-bottom: 2rem;
-  padding: 0 2rem;
+  padding: 0;
 }
 
 .footer-section {
   text-align: center;
+  flex: 1;
 }
 
 .footer-section ul {
@@ -587,7 +587,7 @@ pre code {
   text-align: center;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
-  max-width: 900px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
