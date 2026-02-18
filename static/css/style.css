@@ -585,3 +585,10 @@ pre code {
     grid-template-columns: 1fr;
   }
 }
+
+.footer-bottom .trademark-notice {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
