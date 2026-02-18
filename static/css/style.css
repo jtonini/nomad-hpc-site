@@ -49,7 +49,7 @@ h1 { font-size: 2.5rem; margin-bottom: 0.8rem; }
 h2 { font-size: 1.8rem; margin-bottom: 0.6rem; }
 h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
 
-p { margin-bottom: 0.8rem; color: var(--text); line-height: 1.5; }
+p { margin-bottom: 0.8rem; color: var(--text); line-height: 1.5; text-align: justify; }
 
 a {
   color: var(--cyan);
@@ -219,10 +219,11 @@ pre code {
 
 .hero .description {
   font-size: 1.05rem;
-  max-width: 650px;
+  max-width: 500px;
   margin: 0 auto 1.5rem;
   color: var(--text);
   line-height: 1.5;
+  text-align: center;
 }
 
 .hero .motto {
@@ -300,17 +301,18 @@ pre code {
 
 .section-header p {
   color: var(--text-dim);
-  max-width: 650px;
+  max-width: 550px;
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -445,9 +447,9 @@ pre code {
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -491,8 +493,9 @@ pre code {
 }
 
 .quickstart-content {
-  max-width: 700px;
+  max-width: 550px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .quickstart pre {
@@ -514,12 +517,13 @@ pre code {
 }
 
 .footer-container {
-  max-width: 1100px;
+  max-width: 800px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .footer-section h4 {
@@ -529,12 +533,14 @@ pre code {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
+  text-align: center;
 }
 
 .footer-section p {
   color: var(--text-dim);
   font-size: 0.85rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .footer-section ul {
@@ -598,7 +604,9 @@ pre code {
   }
   
   .features-grid,
-  .screenshots-grid {
+  .screenshots-grid,
+  .tech-grid,
+  .footer-container {
     grid-template-columns: 1fr;
   }
 }
