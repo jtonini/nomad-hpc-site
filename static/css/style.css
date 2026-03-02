@@ -231,8 +231,8 @@ pre code {
 }
 
 .hero .motto {
-  font-family: 'Georgia', serif;
-  font-style: italic;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-style: normal;
   font-size: 1rem;
   color: var(--text-dim);
   margin-bottom: 2rem;
