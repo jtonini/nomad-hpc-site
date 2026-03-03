@@ -314,7 +314,7 @@ pre code {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
   max-width: 750px;
   margin: 0 auto;
@@ -407,9 +407,9 @@ pre code {
 
 .screenshots-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -430,7 +430,7 @@ pre code {
 .screenshot-item img {
   width: 100%;
   height: auto;
-  max-height: 280px;
+  max-height: 500px;
   object-fit: contain;
   background: var(--bg-dark);
   padding: 0.8rem;
@@ -461,7 +461,7 @@ pre code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -685,7 +685,7 @@ pre code {
   border: 1px solid var(--cyan);
   border-radius: 8px;
   padding: 1.2rem 1.5rem;
-  max-width: 900px;
+  max-width: 800px;
   margin: 2rem auto 0;
   box-shadow: 0 0 15px var(--cyan-glow);
 }

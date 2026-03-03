@@ -6,7 +6,7 @@ title = 'NØMAD-HPC'
   tagline = "NØde Monitoring And Diagnostics for HPC"
   description = "Open-source monitoring, analysis, and diagnostics for High-Performance Computing clusters"
   github = "https://github.com/jtonini/nomad"
-  docs = "https://jtonini.github.io/nomad/"
+  docs = "https://jtonini.github.io/nomad-hpc/"
   
 [markup.goldmark.renderer]
   unsafe = true
