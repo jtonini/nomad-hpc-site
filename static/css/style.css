@@ -236,6 +236,7 @@ pre code {
   font-size: 1rem;
   color: var(--text-dim);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .hero-buttons {
@@ -314,7 +315,7 @@ pre code {
 
 .features-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   max-width: 750px;
   margin: 0 auto;
