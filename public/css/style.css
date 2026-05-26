@@ -114,11 +114,12 @@ pre code {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--cyan);
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 0.25em;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -126,9 +127,9 @@ pre code {
   color: var(--cyan);
 }
 
-.logo-symbol { color: var(--cyan); }
-.logo-slash { color: var(--orange); }
-.logo-text { color: var(--cyan); }
+.logo-symbol { color: #fff; }
+.logo-slash { color: #fff; }
+.logo-text { color: #fff; }
 
 .logo img {
   height: 36px;
