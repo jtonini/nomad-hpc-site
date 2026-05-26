@@ -714,3 +714,21 @@ pre code {
   margin-bottom: 0;
   text-align: left;
 }
+
+/* New hero composite image */
+.hero-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 200, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}
