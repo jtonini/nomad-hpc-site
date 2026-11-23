@@ -3,7 +3,7 @@
     <div class="footer-inner">
         <div class="footer-mark">
             {{ partial "wordmark.html" (dict "class" "footer-wordmark" "compact" true) }}
-            <p>{{ $p.expansion }}. Version {{ $p.version }}, {{ $p.released }}.</p>
+            <p>{{ $p.expansion }}. Version <span data-version>{{ $p.version }}</span>, <span data-released>{{ $p.released }}</span>.</p>
         </div>
         <nav class="footer-links" aria-label="Project">
             <a href="{{ $p.docs }}" target="_blank" rel="noopener">Documentation</a>

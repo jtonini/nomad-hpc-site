@@ -8,7 +8,8 @@ disableKinds = ['taxonomy', 'term', 'RSS']
   expansion = "NØde Monitoring And Ðiagnostics"
   tagline = "Open-source monitoring and diagnostics for HPC clusters"
   description = "NØMAÐ watches HPC clusters, interactive servers, lab workstations and storage, and turns what it sees into plain answers for researchers, PIs and research computing staff."
-  version = "1.62.0"
+  # Shown until the page reads the latest release from PyPI (static/js: site.js).
+  version = "1.63.1"
   released = "November 2026"
   github = "https://github.com/jtonini/nomad-hpc"
   docs = "https://jtonini.github.io/nomad-hpc/"

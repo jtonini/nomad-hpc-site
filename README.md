@@ -20,7 +20,7 @@ hugo --gc --minify     # build into public/
 | Styles and the little script | `assets/css/style.css`, `assets/js/site.js` (served under names that change with their contents) |
 | Screenshots and art | `static/images/` |
 
-After a release, change `version` and `released` in `hugo.toml`. When the Console's repository is public, put its address in `console_repo` and the Get started section links to it; until then it describes the Console without a link.
+The version line reads the latest release from PyPI when the page loads; `version` and `released` in `hugo.toml` are what it shows when PyPI can't be reached, so update them now and then. When the Console's repository is public, put its address in `console_repo` and the Get started section links to it; until then it describes the Console without a link.
 
 The page names no institution: screenshots come from `nomad demo`'s made-up people and cluster, and the footer's Contact link appears only when `contact` is set.
 

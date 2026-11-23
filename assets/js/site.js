@@ -68,6 +68,24 @@
     });
   });
 
+  // The latest release, from PyPI, so the page never shows an old version.
+  // hugo.toml's version stays if PyPI can't be reached.
+  var versions = document.querySelectorAll("[data-version]");
+  if (versions.length && window.fetch) {
+    fetch("https://pypi.org/pypi/nomad-hpc/json", { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (!j || !j.info || !/^\d+(\.\d+)+$/.test(j.info.version)) return;
+        var v = j.info.version;
+        var files = (j.releases && j.releases[v]) || [];
+        var when = files.length ? new Date(files[0].upload_time_iso_8601) : null;
+        var said = when && !isNaN(when) ? when.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) : null;
+        versions.forEach(function (el) { el.textContent = v; });
+        if (said) document.querySelectorAll("[data-released]").forEach(function (el) { el.textContent = "released " + said; });
+      })
+      .catch(function () {});
+  }
+
   // Copy buttons
   document.querySelectorAll(".copy[data-copy]").forEach(function (btn) {
     var label = btn.textContent;
