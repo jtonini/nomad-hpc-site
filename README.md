@@ -17,7 +17,7 @@ hugo --gc --minify     # build into public/
 | The paper's BibTeX | `data/citation.yaml` |
 | The wordmark (drawn as SVG) | `layouts/partials/wordmark.html` |
 | The "How it fits together" diagram | `layouts/partials/architecture.html` |
-| Styles and the little script | `static/css/style.css`, `static/js/site.js` |
+| Styles and the little script | `assets/css/style.css`, `assets/js/site.js` (served under names that change with their contents) |
 | Screenshots and art | `static/images/` |
 
 After a release, change `version` and `released` in `hugo.toml`. When the Console's repository is public, put its address in `console_repo` and the Get started section links to it; until then it describes the Console without a link.
