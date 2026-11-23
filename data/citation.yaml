@@ -1,0 +1,12 @@
+# The paper to cite, as BibTeX (shown on the home page with a copy button).
+bibtex: |-
+  @article{tonini2026nomad,
+    author  = {Tonini, Jo{\~a}o Filipe Riva},
+    title   = {{N{\O}MAD}: Lightweight {HPC} Monitoring and Diagnostics
+               with Machine Learning-Based Failure Prediction},
+    journal = {Journal of Open Research Software},
+    volume  = {14},
+    pages   = {17},
+    year    = {2026},
+    doi     = {10.5334/jors.686}
+  }

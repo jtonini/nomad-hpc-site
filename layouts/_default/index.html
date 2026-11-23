@@ -1,247 +1,255 @@
 {{ define "main" }}
+{{- $p := .Site.Params -}}
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <img src="/images/nomad-hero.png" alt="NØMAD-HPC" class="hero-image">
-    <p class="tagline">Node Monitoring And Diagnostics</p>
-    <p class="description">
-      Open-source monitoring and diagnostics<br>
-      for High-Performance Computing clusters.
-    </p>
-    <p class="motto">"Where raw infrastructure metrics<br>become actionable guidance."</p>
-    <div class="hero-buttons">
-      <a href="#quickstart" class="btn btn-primary">Get Started</a>
-      <a href="https://github.com/jtonini/nomad-hpc" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <h1 id="hero-title" class="hero-mark">
+      {{ partial "wordmark.html" (dict "class" "hero-wordmark") }}
+      <span class="hero-expansion">{{ $p.expansion }}</span>
+    </h1>
+    <hr class="hero-rule">
+    <p class="hero-tagline">{{ $p.tagline }}</p>
+    <p class="hero-lead">NØMAÐ watches your clusters, interactive servers, lab workstations and storage, and turns what it sees into plain answers: for the people who run jobs, the PIs who lead labs, and the staff who keep it all running.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#start">Try the demo</a>
+      <a class="btn btn-quiet" href="{{ $p.docs }}" target="_blank" rel="noopener">Read the documentation</a>
+    </div>
+    <div class="install">
+      <code id="install-cmd">pip install nomad-hpc</code>
+      <button class="copy" type="button" data-copy="#install-cmd">Copy</button>
+    </div>
+    <p class="hero-version">Version {{ $p.version }}, {{ $p.released }}. Free and open source under AGPL-3.0.</p>
+  </div>
+  <figure class="hero-shot">
+    <div class="hero-stage">
+    <div class="frame">
+      <div class="frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+      <img src="/images/console-home.webp" width="2160" height="1350"
+           alt="The NØMAÐ Console's home page for a student: a job that ran out of memory with a See why button, jobs running and waiting now, an open Jupyter session, and jobs that ended lately with a one-line reason each.">
+    </div>
+    <div class="hero-phone">
+      <img src="/images/console-phone.webp" width="780" height="1688"
+           alt="The same home page on a phone: the out-of-memory notice, then the jobs running and waiting, stacked to fit the screen.">
+    </div>
+    </div>
+    <figcaption>A student's home page in the Console, on a computer and on a phone. All screenshots use <code>nomad demo</code>'s made-up people and cluster.</figcaption>
+  </figure>
+</section>
+
+<section class="section tour" id="console" aria-labelledby="console-title">
+  <div class="section-head">
+    <h2 id="console-title">One Console, seen by whoever signs in</h2>
+    <p>Researchers, PIs, instructors and staff use the same pages. Each person sees what their role allows: their own work, their lab, their class, or every cluster.</p>
+  </div>
+
+  <div class="tour-tabs" role="tablist" aria-label="Who is looking">
+    {{ range $i, $role := .Site.Data.tour }}
+    <button role="tab" type="button" id="tab-{{ $role.id }}" aria-controls="panel-{{ $role.id }}"
+            aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" {{ if ne $i 0 }}tabindex="-1"{{ end }}>{{ $role.tab }}</button>
+    {{ end }}
+  </div>
+
+  {{ range $i, $role := .Site.Data.tour }}
+  <div class="tour-panel" role="tabpanel" id="panel-{{ $role.id }}" aria-labelledby="tab-{{ $role.id }}" {{ if ne $i 0 }}hidden{{ end }}>
+    <p class="tour-intro">{{ $role.intro }}</p>
+    <div class="tour-views" role="group" aria-label="Pages">
+      {{ range $j, $v := $role.views }}
+      <button type="button" class="tour-view" aria-pressed="{{ if eq $j 0 }}true{{ else }}false{{ end }}"
+              data-src="/images/{{ $v.image }}" data-text="{{ $v.text }}" data-alt="{{ $v.title }}: {{ $v.text }}">{{ $v.title }}</button>
+      {{ end }}
+    </div>
+    {{ with index $role.views 0 }}
+    <figure class="tour-stage">
+      <a class="frame" href="/images/{{ .image }}" target="_blank" rel="noopener" title="Open the full-size screenshot">
+        <div class="frame-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <img class="tour-img" src="/images/{{ .image }}" width="2160" height="1350" loading="lazy" alt="{{ .title }}: {{ .text }}">
+      </a>
+      <figcaption class="tour-caption" aria-live="polite">{{ .text }}</figcaption>
+    </figure>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+
+<section class="section advice" id="advice" aria-labelledby="advice-title">
+  <div class="section-head">
+    <h2 id="advice-title">Advice a person can act on</h2>
+    <p>NØMAÐ compares what each job asked for with what it used, and tells the person what to change, in words a first-year student can follow.</p>
+  </div>
+  <div class="advice-grid">
+    <figure class="advice-mail">
+      <img src="/images/email-weekly.webp" width="1444" height="1514" loading="lazy"
+           alt="A weekly email from Research Computing: on the highmem partition, 5 of the last 8 completed jobs asked for 2 cores and most used about 1. Ask for #SBATCH --cpus-per-task=1 instead, because cores held but unused make other jobs wait.">
+      <figcaption>The weekly email, made with <code>nomad notices mail</code>.</figcaption>
+    </figure>
+    <div class="advice-points">
+      <dl>
+        <dt>What it saw, in numbers they can check</dt>
+        <dd>Which jobs, on which partition, what they asked for and what most of them used.</dd>
+        <dt>The line to change</dt>
+        <dd>The <code>#SBATCH</code> value to ask for instead, not a lecture about efficiency.</dd>
+        <dt>Why, in one sentence</dt>
+        <dd>Cores held but unused make other people's jobs wait. Asking for far more time is mentioned only when it made the person wait.</dd>
+        <dt>Weekly at most, and easy to stop</dt>
+        <dd>An email goes only when there is something new. People turn it off from the Console; accounts that exist only for a course are left out.</dd>
+      </dl>
+      <figure class="advice-cli">
+        <img src="/images/cli-explain.webp" width="1284" height="1330" loading="lazy"
+             alt="Terminal output of nomad edu explain 1653: scores for CPU 72, memory 89, time limit 65 and I/O 25, the advice to keep heavy I/O off shared storage, and how each score moved over the last 30 jobs.">
+        <figcaption>The same advice on the cluster: <code>nomad edu explain JOB</code> and <code>nomad edu me</code>.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- Features Section -->
-<section class="features" id="features">
-  <div class="section-header">
-    <h2>Why NØMAD?</h2>
-    <p>Monitor performance, diagnose issues,<br>
-    and educate users—all in one place.<br>
-    A complete solution for understanding<br>
-    and optimizing your HPC cluster.</p>
+<section class="section watches" id="watches" aria-labelledby="watches-title">
+  <div class="section-head">
+    <h2 id="watches-title">What it keeps an eye on</h2>
+    <p>Each collector can be turned on or off per machine, and its thresholds live in <code>nomad.toml</code>, so another center can set its own.</p>
   </div>
-  
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <div class="feature-content">
-        <h3>Real-time Monitoring</h3>
-        <p>Collect metrics from compute<br>nodes, storage systems, and<br>network infrastructure. 15+<br>collectors for visibility.</p>
-      </div>
+  <div class="watch-list">
+    <section>
+      <h3>Jobs and queues</h3>
+      <p>Slurm jobs and waits, counted from when a job could start, with a job array counted once. Jobs that fail at start and jobs running past their limit. Guests on a lab's condo are told when the owners need the nodes back, and whether their job will survive a requeue.</p>
+    </section>
+    <section>
+      <h3>Nodes and hardware</h3>
+      <p>CPU, memory and GPUs (real utilisation from DCGM), temperatures, power supplies, fans, and how fast each CPU really runs when busy. Draining and resuming a node from the Console, always as a dry run first.</p>
+    </section>
+    <section>
+      <h3>Interactive servers and login nodes</h3>
+      <p>RStudio and Jupyter sessions left idle or holding the most memory, with actions such as restarting a person's session. Heavy work on a login node is told to the person, with the better way.</p>
+    </section>
+    <section>
+      <h3>Lab workstations and storage</h3>
+      <p>Departmental workstations, read over ssh from one machine. Who holds what on each storage server, and data left unchanged for a year, with a ready-made note to its owner that staff can send.</p>
+    </section>
+    <section>
+      <h3>Work from the browser</h3>
+      <p>Submit a job sized from past runs, see where it would start soonest, run it again, start from a template, and move or copy files between machines. The Console does it as the person, through <code>nomad-gate</code>.</p>
+    </section>
+    <section>
+      <h3>Labs, courses and reports</h3>
+      <p>PIs confirm who is in their lab and request accounts from the Console. Term reports for each lab, monthly condo reports for owners, and a usage report for administrators.</p>
+    </section>
+    <section>
+      <h3>Policy watch</h3>
+      <p>Tunnels, proxies, miners, GPUs served to the network, AI agents driving a cluster, and job patterns such as bursts and fail-fast loops. It reads and reports; it never stops anything.</p>
+    </section>
+    <section>
+      <h3>Software licenses</h3>
+      <p>When each license ends, a reminder before it does, and a small test of whether each licensed program still runs on each machine.</p>
+    </section>
+    <section>
+      <h3>Itself</h3>
+      <p>Sites that stop reporting, maintenance windows declared ahead, and the size and growth of its own databases. <code>nomad metrics serve</code> publishes each site's latest readings for Prometheus, and a Grafana dashboard comes with it.</p>
+    </section>
+  </div>
+</section>
+
+<section class="section principles" aria-labelledby="principles-title">
+  <div class="section-head">
+    <h2 id="principles-title">Honest about what it knows</h2>
+  </div>
+  <div class="principle-list">
+    <div class="principle">
+      <h3>It says when it doesn't know</h3>
+      <p>Pages say what period their numbers cover and how old the latest reading is. A site that goes quiet raises an alert, and something nobody measures is listed as not monitored, never shown in green.</p>
     </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🔍</div>
-      <div class="feature-content">
-        <h3>Smart Diagnostics</h3>
-        <p>Automated health analysis<br>with actionable recommendations.<br>Identify problems before<br>users report them.</p>
-      </div>
+    <div class="principle">
+      <h3>It speaks plainly</h3>
+      <p>"Running out of memory, moving data to and from disk", not "thrashing". Advice names the jobs it is about and the value to ask for.</p>
     </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🧠</div>
-      <div class="feature-content">
-        <h3>Job Similarity Analysis</h3>
-        <p>Graph neural networks identify<br>patterns in job behavior. Find<br>anomalies by comparing jobs<br>to their "neighbors".</p>
-      </div>
+    <div class="principle">
+      <h3>It never runs as root</h3>
+      <p>Collectors run as ordinary accounts. When the Console acts on a cluster, it acts as the person who asked, with that person's own permissions there.</p>
     </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">📈</div>
-      <div class="feature-content">
-        <h3>Trend Detection</h3>
-        <p>Derivative-based analysis<br>catches degradation early.<br>Know when storage is filling<br>or performance is dropping.</p>
-      </div>
+    <div class="principle">
+      <h3>It shows people what is theirs to see</h3>
+      <p>A student sees their own work, a PI their lab, an instructor their class, staff everyone. Who was shown advice is counted for staff, never named.</p>
     </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🎓</div>
-      <div class="feature-content">
-        <h3>Educational Feedback</h3>
-        <p>Help users become better HPC<br>citizens. Proficiency scoring<br>and suggestions improve<br>resource efficiency.</p>
-      </div>
-    </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🔔</div>
-      <div class="feature-content">
-        <h3>Flexible Alerts</h3>
-        <p>Email, Slack, and webhook<br>notifications. Define thresholds<br>that matter to your environment.</p>
-      </div>
+    <div class="principle">
+      <h3>It travels light</h3>
+      <p>Python, SQLite and a TOML file. No message queue or time-series database to run.</p>
     </div>
   </div>
 </section>
 
+<section class="section how" id="how" aria-labelledby="how-title">
+  <div class="section-head">
+    <h2 id="how-title">How it fits together</h2>
+    <p>A small center can run all three parts on one machine; a larger one spreads them out.</p>
+  </div>
+  <div class="how-stack">
+    <div class="how-diagram">{{ partial "architecture.html" . }}</div>
+    <ol class="how-steps">
+      <li>
+        <h3>Collect</h3>
+        <p>On each site, such as a cluster's head node, an interactive server, or a machine that reaches the lab workstations, <code>nomad collect</code> writes what it reads to the site's own SQLite database.</p>
+      </li>
+      <li>
+        <h3>Sync</h3>
+        <p>The hub runs <code>nomad sync</code> on a timer: it copies each site's database safely, merges them, and records which sites answered, which came from cache and which went quiet.</p>
+      </li>
+      <li>
+        <h3>Serve</h3>
+        <p>The Console, the emails and the reports read the hub's combined database. <code>nomad metrics serve</code> answers Prometheus.</p>
+      </li>
+    </ol>
+  </div>
+</section>
 
-<!-- Screenshots Section -->
-<section class="screenshots" id="screenshots">
-  <div class="section-header">
-    <h2>See It In Action</h2>
-    <p>Real-time insights into your HPC cluster</p>
+<section class="section start" id="start" aria-labelledby="start-title">
+  <div class="section-head">
+    <h2 id="start-title">Get started</h2>
+    <p>NØMAÐ needs Python 3.10 or later. Slurm, sysstat and NVIDIA's tools are used where they are installed.</p>
   </div>
-  
-  <div class="screenshots-grid">
-    <div class="screenshot-item">
-      <img src="/images/dashboard.png" alt="NØMAD Dashboard">
-      <h3>Interactive Dashboard</h3>
-      <p>Real-time cluster overview<br>with job network visualization<br>and node status</p>
+  <div class="start-grid">
+    <div class="start-card">
+      <h3>Try it with made-up data</h3>
+      <p>A synthetic cluster with jobs, nodes, alerts and storage, on your own computer.</p>
+      <pre class="code"><code id="code-demo">pip install nomad-hpc
+nomad demo</code></pre>
+      <button class="copy" type="button" data-copy="#code-demo">Copy</button>
+      <p>For the Console, <code>nomad demo --console ~/nomad-demo</code> makes a demo with six people to sign in as: a student, a research assistant, a PI, an instructor, an operator and an admin.</p>
     </div>
-    
-    <div class="screenshot-item">
-      <img src="/images/architecture.png" alt="Architecture">
-      <h3>Modular Architecture</h3>
-      <p>Collectors, analyzers, and<br>alerts working together<br>seamlessly</p>
+    <div class="start-card">
+      <h3>Set it up on your systems</h3>
+      <p>The setup wizard detects the tools on the machine and asks about the rest.</p>
+      <pre class="code"><code id="code-setup">nomad init
+nomad collect
+nomad sync</code></pre>
+      <button class="copy" type="button" data-copy="#code-setup">Copy</button>
+      <p>Run <code>nomad init</code> and <code>nomad collect</code> on each site, and <code>nomad sync</code> on the hub. The <a href="{{ $p.docs }}installation/" target="_blank" rel="noopener">installation guide</a> covers timers, accounts and the hub.</p>
     </div>
-    
-    <div class="screenshot-item">
-      <img src="/images/edu_explain.png" alt="Educational Feedback">
-      <h3>Educational Feedback</h3>
-      <p>Help users improve their<br>resource requests with<br>actionable insights</p>
-    </div>
-    
-    <div class="screenshot-item">
-      <img src="/images/network.png" alt="Network Analysis">
-      <h3>Job Similarity Network</h3>
-      <p>Visualize relationships<br>between jobs to identify<br>patterns and anomalies</p>
-    </div>
-  </div>
-  
-  <!-- Paper Citation -->
-  <div class="paper-citation" id="cite">
-    <div class="paper-icon">📄</div>
-    <div class="paper-info">
-      <p class="paper-title">NØMAD: Lightweight HPC Monitoring and Diagnostics with Machine Learning-Based Failure Prediction</p>
-      <p class="paper-journal">Published in <em>Journal of Open Research Software</em>, 14: 17 (2026)</p>
-      <p class="paper-journal">Tonini JFR. <a href="https://doi.org/10.5334/jors.686" target="_blank">https://doi.org/10.5334/jors.686</a></p>
+    <div class="start-card">
+      <h3>The Console</h3>
+      <p>A FastAPI and React web application that reads the hub's database. It is free software under AGPL-3.0, like the rest of NØMAÐ.</p>
+      <p>It listens only on its own machine. People reach it through your web server, or through an SSH tunnel that <code>nomad console launch</code> opens for them.</p>
+      {{ with $p.console_repo }}
+      <p><a class="btn btn-quiet" href="{{ . }}" target="_blank" rel="noopener">The Console's source</a></p>
+      {{ end }}
     </div>
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats">
-  <div class="stats-grid">
-    <div class="stat-row">
-      <div class="stat-item">
-        <h3>15+</h3>
-        <p>Data Sources</p>
-      </div>
-      <div class="stat-item">
-        <h3>50+</h3>
-        <p>Metrics Tracked</p>
-      </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat-item">
-        <h3>4</h3>
-        <p>ML Models</p>
-      </div>
-      <div class="stat-item">
-        <h3>100%</h3>
-        <p>Open Source</p>
-      </div>
-    </div>
+<section class="section cite" id="cite" aria-labelledby="cite-title">
+  <div class="section-head">
+    <h2 id="cite-title">Research and citation</h2>
+    <p>NØMAÐ is peer-reviewed research software. Its optional failure prediction trains TESSERA, a similarity-network classifier, and reports it beside a simple rule so you can see whether it earns its place.</p>
   </div>
-</section>
-
-<!-- Tech Stack Section -->
-<section class="tech-stack" id="tech">
-  <div class="section-header">
-    <h2>Transparent Tech Stack</h2>
-    <p>We believe in showing exactly how things work</p>
-  </div>
-  
-  <div class="tech-grid">
-    <div class="tech-card">
-      <h4>Core</h4>
-      <ul>
-        <li>Python 3.9+</li>
-        <li>Click (CLI framework)</li>
-        <li>SQLite (embedded database)</li>
-        <li>TOML (configuration)</li>
-      </ul>
+  <div class="cite-grid">
+    <article class="paper">
+      <p class="paper-journal"><em>Journal of Open Research Software</em> 14: 17 (2026)</p>
+      <h3><a href="{{ $p.paper }}" target="_blank" rel="noopener">NØMAD: Lightweight HPC Monitoring and Diagnostics with Machine Learning-Based Failure Prediction</a></h3>
+      <p>João Filipe Riva Tonini</p>
+      <p class="paper-links"><a href="{{ $p.paper }}" target="_blank" rel="noopener">doi:10.5334/jors.686</a> <a href="{{ $p.zenodo }}" target="_blank" rel="noopener">Software archive on Zenodo</a></p>
+    </article>
+    <div class="bibtex">
+      <pre class="code"><code id="code-bib">{{ .Site.Data.citation.bibtex }}</code></pre>
+      <button class="copy" type="button" data-copy="#code-bib">Copy BibTeX</button>
     </div>
-    
-    <div class="tech-card">
-      <h4>Data Collection</h4>
-      <ul>
-        <li>SLURM (sacct, squeue)</li>
-        <li>vmstat, mpstat, iostat</li>
-        <li>nfsiostat, zpool</li>
-        <li>nvidia-smi (GPUs)</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>Analysis</h4>
-      <ul>
-        <li>NumPy & Pandas</li>
-        <li>SciPy (statistics)</li>
-        <li>Derivative calculus (trends)</li>
-        <li>Graph similarity networks</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>ML (Optional)</h4>
-      <ul>
-        <li>scikit-learn</li>
-        <li>PyTorch</li>
-        <li>PyTorch Geometric (GNN)</li>
-        <li>LSTM autoencoders</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>Visualization</h4>
-      <ul>
-        <li>Vanilla JavaScript</li>
-        <li>React (dashboard)</li>
-        <li>D3.js (graphs)</li>
-        <li>Pure CSS animations</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>Alerts</h4>
-      <ul>
-        <li>SMTP (email)</li>
-        <li>Slack webhooks</li>
-        <li>Generic webhooks</li>
-        <li>Custom backends</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Quickstart Section -->
-<section class="quickstart" id="quickstart">
-  <div class="section-header">
-    <h2>Quick Start</h2>
-    <p>Get up and running in minutes</p>
-  </div>
-  
-  <div class="quickstart-content">
-    <pre><code># Install from PyPI
-pip install nomad-hpc
-
-# Initialize configuration
-nomad init
-
-# Try the demo with synthetic data
-nomad demo
-
-# Or connect to your SLURM cluster
-nomad collect --daemon</code></pre>
-    
-    <p style="text-align: center; margin-top: 2rem;">
-      <a href="https://jtonini.github.io/nomad-hpc/" target="_blank" rel="noopener" class="btn btn-primary">Read the Documentation</a>
-    </p>
   </div>
 </section>
 

@@ -1,312 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="generator" content="Hugo 0.142.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØMAD-HPC | NØMAD-HPC</title>
-    <meta name="description" content="Open-source monitoring, analysis, and diagnostics for High-Performance Computing clusters">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tenor+Sans&family=JetBrains+Mono&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="site-header">
-    <nav class="nav-container">
-        <a href="/" class="logo">
-            <span class="logo-symbol">N</span><span class="logo-slash">Ø</span><span class="logo-text">MAĐ</span>
-        </a>
-        <ul class="nav-links">
-            
-            <li><a href="#features">Features</a></li>
-            
-            <li><a href="#screenshots">Screenshots</a></li>
-            
-            <li><a href="#quickstart">Get Started</a></li>
-            
-            <li><a href="#cite">Cite</a></li>
-            
-            <li><a href="https://jtonini.github.io/nomad/" target="_blank" rel="noopener">Documentation</a></li>
-            
-            <li><a href="https://github.com/jtonini/nomad" target="_blank" rel="noopener">GitHub</a></li>
-            
-        </ul>
-    </nav>
-</header>
-
-    <main>
-        
-
-
-<section class="hero" id="home">
-  <div class="hero-content">
-    <img src="/images/nomad-hero.png" alt="NØMAD-HPC" class="hero-image">
-    <p class="tagline">Node Monitoring And Diagnostics</p>
-    <p class="description">
-      Open-source monitoring and diagnostics<br>
-      for High-Performance Computing clusters.
-    </p>
-    <p class="motto">"Where raw infrastructure metrics<br>become actionable guidance."</p>
-    <div class="hero-buttons">
-      <a href="#quickstart" class="btn btn-primary">Get Started</a>
-      <a href="https://github.com/jtonini/nomad-hpc" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub</a>
-    </div>
-  </div>
-</section>
-
-
-<section class="features" id="features">
-  <div class="section-header">
-    <h2>Why NØMAD?</h2>
-    <p>Monitor performance, diagnose issues,<br>
-    and educate users—all in one place.<br>
-    A complete solution for understanding<br>
-    and optimizing your HPC cluster.</p>
-  </div>
-  
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <div class="feature-content">
-        <h3>Real-time Monitoring</h3>
-        <p>Collect metrics from compute<br>nodes, storage systems, and<br>network infrastructure. 15+<br>collectors for visibility.</p>
-      </div>
-    </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🔍</div>
-      <div class="feature-content">
-        <h3>Smart Diagnostics</h3>
-        <p>Automated health analysis<br>with actionable recommendations.<br>Identify problems before<br>users report them.</p>
-      </div>
-    </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🧠</div>
-      <div class="feature-content">
-        <h3>Job Similarity Analysis</h3>
-        <p>Graph neural networks identify<br>patterns in job behavior. Find<br>anomalies by comparing jobs<br>to their "neighbors".</p>
-      </div>
-    </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">📈</div>
-      <div class="feature-content">
-        <h3>Trend Detection</h3>
-        <p>Derivative-based analysis<br>catches degradation early.<br>Know when storage is filling<br>or performance is dropping.</p>
-      </div>
-    </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🎓</div>
-      <div class="feature-content">
-        <h3>Educational Feedback</h3>
-        <p>Help users become better HPC<br>citizens. Proficiency scoring<br>and suggestions improve<br>resource efficiency.</p>
-      </div>
-    </div>
-    
-    <div class="feature-card">
-      <div class="feature-icon">🔔</div>
-      <div class="feature-content">
-        <h3>Flexible Alerts</h3>
-        <p>Email, Slack, and webhook<br>notifications. Define thresholds<br>that matter to your environment.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="screenshots" id="screenshots">
-  <div class="section-header">
-    <h2>See It In Action</h2>
-    <p>Real-time insights into your HPC cluster</p>
-  </div>
-  
-  <div class="screenshots-grid">
-    <div class="screenshot-item">
-      <img src="/images/dashboard.png" alt="NØMAD Dashboard">
-      <h3>Interactive Dashboard</h3>
-      <p>Real-time cluster overview<br>with job network visualization<br>and node status</p>
-    </div>
-    
-    <div class="screenshot-item">
-      <img src="/images/architecture.png" alt="Architecture">
-      <h3>Modular Architecture</h3>
-      <p>Collectors, analyzers, and<br>alerts working together<br>seamlessly</p>
-    </div>
-    
-    <div class="screenshot-item">
-      <img src="/images/edu_explain.png" alt="Educational Feedback">
-      <h3>Educational Feedback</h3>
-      <p>Help users improve their<br>resource requests with<br>actionable insights</p>
-    </div>
-    
-    <div class="screenshot-item">
-      <img src="/images/network.png" alt="Network Analysis">
-      <h3>Job Similarity Network</h3>
-      <p>Visualize relationships<br>between jobs to identify<br>patterns and anomalies</p>
-    </div>
-  </div>
-  
-  
-  <div class="paper-citation" id="cite">
-    <div class="paper-icon">📄</div>
-    <div class="paper-info">
-      <p class="paper-title">NØMAD: Lightweight HPC Monitoring and Diagnostics with Machine Learning-Based Failure Prediction</p>
-      <p class="paper-journal">Published in <em>Journal of Open Research Software</em>, 14: 17 (2026)</p>
-      <p class="paper-journal">Tonini JFR. <a href="https://doi.org/10.5334/jors.686" target="_blank">https://doi.org/10.5334/jors.686</a></p>
-    </div>
-  </div>
-</section>
-
-
-<section class="stats">
-  <div class="stats-grid">
-    <div class="stat-row">
-      <div class="stat-item">
-        <h3>15+</h3>
-        <p>Data Sources</p>
-      </div>
-      <div class="stat-item">
-        <h3>50+</h3>
-        <p>Metrics Tracked</p>
-      </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat-item">
-        <h3>4</h3>
-        <p>ML Models</p>
-      </div>
-      <div class="stat-item">
-        <h3>100%</h3>
-        <p>Open Source</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="tech-stack" id="tech">
-  <div class="section-header">
-    <h2>Transparent Tech Stack</h2>
-    <p>We believe in showing exactly how things work</p>
-  </div>
-  
-  <div class="tech-grid">
-    <div class="tech-card">
-      <h4>Core</h4>
-      <ul>
-        <li>Python 3.9+</li>
-        <li>Click (CLI framework)</li>
-        <li>SQLite (embedded database)</li>
-        <li>TOML (configuration)</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>Data Collection</h4>
-      <ul>
-        <li>SLURM (sacct, squeue)</li>
-        <li>vmstat, mpstat, iostat</li>
-        <li>nfsiostat, zpool</li>
-        <li>nvidia-smi (GPUs)</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>Analysis</h4>
-      <ul>
-        <li>NumPy & Pandas</li>
-        <li>SciPy (statistics)</li>
-        <li>Derivative calculus (trends)</li>
-        <li>Graph similarity networks</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>ML (Optional)</h4>
-      <ul>
-        <li>scikit-learn</li>
-        <li>PyTorch</li>
-        <li>PyTorch Geometric (GNN)</li>
-        <li>LSTM autoencoders</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>Visualization</h4>
-      <ul>
-        <li>Vanilla JavaScript</li>
-        <li>React (dashboard)</li>
-        <li>D3.js (graphs)</li>
-        <li>Pure CSS animations</li>
-      </ul>
-    </div>
-    
-    <div class="tech-card">
-      <h4>Alerts</h4>
-      <ul>
-        <li>SMTP (email)</li>
-        <li>Slack webhooks</li>
-        <li>Generic webhooks</li>
-        <li>Custom backends</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<section class="quickstart" id="quickstart">
-  <div class="section-header">
-    <h2>Quick Start</h2>
-    <p>Get up and running in minutes</p>
-  </div>
-  
-  <div class="quickstart-content">
-    <pre><code># Install from PyPI
-pip install nomad-hpc
-
-# Initialize configuration
-nomad init
-
-# Try the demo with synthetic data
-nomad demo
-
-# Or connect to your SLURM cluster
-nomad collect --daemon</code></pre>
-    
-    <p style="text-align: center; margin-top: 2rem;">
-      <a href="https://jtonini.github.io/nomad-hpc/" target="_blank" rel="noopener" class="btn btn-primary">Read the Documentation</a>
-    </p>
-  </div>
-</section>
-
-
-    </main>
-    <footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-section">
-            <h4>Links</h4>
-            <ul>
-                <li><a href="https://github.com/jtonini/nomad" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="https://jtonini.github.io/nomad-hpc/" target="_blank" rel="noopener">Documentation</a></li>
-                <li><a href="https://pypi.org/project/nomad-hpc/" target="_blank" rel="noopener">PyPI</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="https://github.com/jtonini/nomad/issues" target="_blank" rel="noopener">Report Issue</a></li>
-                <li><a href="mailto:jtonini@richmond.edu">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2024-2026 João Tonini. All rights reserved. Licensed under AGPL-3.0.</p>
-    </div>
-</footer>
-
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>NØMAÐ: Open-source monitoring and diagnostics for HPC clusters</title><meta name=description content="NØMAÐ watches HPC clusters, interactive servers, lab workstations and storage, and turns what it sees into plain answers for researchers, PIs and research computing staff."><link rel=canonical href=https://nomad-hpc.com/><meta property="og:type" content="website"><meta property="og:title" content="NØMAÐ: Open-source monitoring and diagnostics for HPC clusters"><meta property="og:description" content="NØMAÐ watches HPC clusters, interactive servers, lab workstations and storage, and turns what it sees into plain answers for researchers, PIs and research computing staff."><meta property="og:url" content="https://nomad-hpc.com/"><meta property="og:image" content="https://nomad-hpc.com/images/og.jpg"><meta name=twitter:card content="summary_large_image"><meta name=theme-color content="#08101a"><link rel=icon type=image/svg+xml href=/favicon.svg><link rel=preload href=/fonts/jost-latin-300-normal.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/ibm-plex-sans-latin-400-normal.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/style.css><meta name=generator content="Hugo 0.170.1"></head><body><a class=skip href=#main>Skip to the content</a><header class=site-header><nav class=nav aria-label=Main><a href=/ class=nav-mark aria-label="NØMAÐ, home"><svg class="nav-wordmark" viewBox="-6 -34 1002 168" role="img" aria-label="NØMAÐ" focusable="false"><g fill="none" stroke="currentColor" stroke-width="11" stroke-miterlimit="10"><path d="M10 1e2V0l95 1e2V0"/><circle cx="270" cy="50" r="50"/><path d="M440 1e2V0l65 84 65-84v1e2"/><path d="M660 1e2 717.5.0 775 1e2"/><path d="M872 0v1e2h48a50 50 0 000-1e2z"/><path d="M842 50h63"/></g><g fill="none" stroke="var(--cyan, #5fd3e6)" stroke-width="8" stroke-linecap="round"><path d="M228 124 298-22"/></g></svg></a>
+<button class=nav-toggle type=button aria-expanded=false aria-controls=nav-links>Menu</button><ul class=nav-links id=nav-links><li><a href=/#console>Console</a></li><li><a href=/#advice>Advice</a></li><li><a href=/#watches>What it watches</a></li><li><a href=/#how>How it works</a></li><li><a href=/#start>Get started</a></li><li><a href=/#cite>Cite</a></li><li><a href=https://jtonini.github.io/nomad-hpc/ class=external target=_blank rel=noopener>Docs</a></li><li><a href=https://github.com/jtonini/nomad-hpc class=external target=_blank rel=noopener>GitHub</a></li></ul></nav></header><main id=main><section class=hero aria-labelledby=hero-title><div class=hero-art aria-hidden=true></div><div class=hero-inner><h1 id=hero-title class=hero-mark><svg class="hero-wordmark" viewBox="0 -135 990 315" role="img" aria-label="NØMAÐ" focusable="false"><g fill="none" stroke="currentColor" stroke-width="7.5" stroke-miterlimit="10"><path d="M10 1e2V0l95 1e2V0"/><circle cx="270" cy="50" r="50"/><path d="M440 1e2V0l65 84 65-84v1e2"/><path d="M660 1e2 717.5.0 775 1e2"/><path d="M872 0v1e2h48a50 50 0 000-1e2z"/><path d="M842 50h63"/></g><g fill="none" stroke="var(--cyan, #5fd3e6)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M219.3 151.8 303.7-65.8"/><path d="M320-77h52l20-48"/><circle cx="215" cy="163" r="12"/><circle cx="308" cy="-77" r="12"/></g></svg>
+<span class=hero-expansion>NØde Monitoring And Ðiagnostics</span></h1><hr class=hero-rule><p class=hero-tagline>Open-source monitoring and diagnostics for HPC clusters</p><p class=hero-lead>NØMAÐ watches your clusters, interactive servers, lab workstations and storage, and turns what it sees into plain answers: for the people who run jobs, the PIs who lead labs, and the staff who keep it all running.</p><div class=hero-actions><a class="btn btn-primary" href=#start>Try the demo</a>
+<a class="btn btn-quiet" href=https://jtonini.github.io/nomad-hpc/ target=_blank rel=noopener>Read the documentation</a></div><div class=install><code id=install-cmd>pip install nomad-hpc</code>
+<button class=copy type=button data-copy=#install-cmd>Copy</button></div><p class=hero-version>Version 1.62.0, November 2026. Free and open source under AGPL-3.0.</p></div><figure class=hero-shot><div class=hero-stage><div class=frame><div class=frame-bar aria-hidden=true><span></span><span></span><span></span></div><img src=/images/console-home.webp width=2160 height=1350 alt="The NØMAÐ Console's home page for a student: a job that ran out of memory with a See why button, jobs running and waiting now, an open Jupyter session, and jobs that ended lately with a one-line reason each."></div><div class=hero-phone><img src=/images/console-phone.webp width=780 height=1688 alt="The same home page on a phone: the out-of-memory notice, then the jobs running and waiting, stacked to fit the screen."></div></div><figcaption>A student's home page in the Console, on a computer and on a phone. All screenshots use <code>nomad demo</code>'s made-up people and cluster.</figcaption></figure></section><section class="section tour" id=console aria-labelledby=console-title><div class=section-head><h2 id=console-title>One Console, seen by whoever signs in</h2><p>Researchers, PIs, instructors and staff use the same pages. Each person sees what their role allows: their own work, their lab, their class, or every cluster.</p></div><div class=tour-tabs role=tablist aria-label="Who is looking"><button role=tab type=button id=tab-researchers aria-controls=panel-researchers aria-selected=true>Researchers and students</button>
+<button role=tab type=button id=tab-pis aria-controls=panel-pis aria-selected=false tabindex=-1>PIs</button>
+<button role=tab type=button id=tab-staff aria-controls=panel-staff aria-selected=false tabindex=-1>Research computing staff</button></div><div class=tour-panel role=tabpanel id=panel-researchers aria-labelledby=tab-researchers><p class=tour-intro>Their own jobs and sessions, what went wrong, and what to ask for next time.</p><div class=tour-views role=group aria-label=Pages><button type=button class=tour-view aria-pressed=true data-src=/images/console-my-jobs.webp data-text="Jobs running and waiting now, then the ones that ended, each with how many of the cores and how much of the memory it asked for it used." data-alt="My jobs: Jobs running and waiting now, then the ones that ended, each with how many of the cores and how much of the memory it asked for it used.">My jobs</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-job.webp data-text="What the job asked for beside what it used, why it ended, and the #SBATCH lines to ask for next time." data-alt="A job's page: What the job asked for beside what it used, why it ended, and the #SBATCH lines to ask for next time.">A job's page</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-doing.webp data-text="Scores for cores, memory, time and I/O over 90 days, which way each is moving, and what would help most." data-alt="How I'm doing: Scores for cores, memory, time and I/O over 90 days, which way each is moving, and what would help most.">How I'm doing</button></div><figure class=tour-stage><a class=frame href=/images/console-my-jobs.webp target=_blank rel=noopener title="Open the full-size screenshot"><div class=frame-bar aria-hidden=true><span></span><span></span><span></span></div><img class=tour-img src=/images/console-my-jobs.webp width=2160 height=1350 loading=lazy alt="My jobs: Jobs running and waiting now, then the ones that ended, each with how many of the cores and how much of the memory it asked for it used."></a><figcaption class=tour-caption aria-live=polite>Jobs running and waiting now, then the ones that ended, each with how many of the cores and how much of the memory it asked for it used.</figcaption></figure></div><div class=tour-panel role=tabpanel id=panel-pis aria-labelledby=tab-pis hidden><p class=tour-intro>Their lab's people, jobs, storage and share of each cluster. Instructors get the same for their classes.</p><div class=tour-views role=group aria-label=Pages><button type=button class=tour-view aria-pressed=true data-src=/images/console-lab.webp data-text="Who is in the lab, what needs attention now, and each member's jobs, cores, memory and waits." data-alt="My lab: Who is in the lab, what needs attention now, and each member's jobs, cores, memory and waits.">My lab</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-lab-share.webp data-text="The lab's share of each cluster, its own condo and the shared nodes, and how often its people waited for room." data-alt="Cluster use: The lab's share of each cluster, its own condo and the shared nodes, and how often its people waited for room.">Cluster use</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-term-report.webp data-text="What the lab used this term. It is emailed to the PI on the first day of each term, with a PDF copy." data-alt="Term report: What the lab used this term. It is emailed to the PI on the first day of each term, with a PDF copy.">Term report</button></div><figure class=tour-stage><a class=frame href=/images/console-lab.webp target=_blank rel=noopener title="Open the full-size screenshot"><div class=frame-bar aria-hidden=true><span></span><span></span><span></span></div><img class=tour-img src=/images/console-lab.webp width=2160 height=1350 loading=lazy alt="My lab: Who is in the lab, what needs attention now, and each member's jobs, cores, memory and waits."></a><figcaption class=tour-caption aria-live=polite>Who is in the lab, what needs attention now, and each member's jobs, cores, memory and waits.</figcaption></figure></div><div class=tour-panel role=tabpanel id=panel-staff aria-labelledby=tab-staff hidden><p class=tour-intro>Every cluster, server and workstation at once, and what needs attention first.</p><div class=tour-views role=group aria-label=Pages><button type=button class=tour-view aria-pressed=true data-src=/images/console-overview.webp data-text="Nodes, cores, memory and GPUs in use now, how jobs ended over the period, and who used the most." data-alt="Overview: Nodes, cores, memory and GPUs in use now, how jobs ended over the period, and who used the most.">Overview</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-busy.webp data-text="Every monitored system on one page, and when each is busiest in a typical week." data-alt="Busy times: Every monitored system on one page, and when each is busiest in a typical week.">Busy times</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-nodes.webp data-text="Click a node for the jobs on it now, whose they are, and the last jobs that ended there." data-alt="Nodes: Click a node for the jobs on it now, whose they are, and the last jobs that ended there.">Nodes</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-interactive.webp data-text="RStudio and Jupyter sessions, idle ones held open for a day or more, and the ones holding the most memory." data-alt="Interactive servers: RStudio and Jupyter sessions, idle ones held open for a day or more, and the ones holding the most memory.">Interactive servers</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-alerts.webp data-text="What needs attention at every site, most serious first. Click an alert for its history." data-alt="Alerts: What needs attention at every site, most serious first. Click an alert for its history.">Alerts</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-trends.webp data-text="Findings linked across sources, such as a disk filling up while jobs that write to it fail." data-alt="Trends: Findings linked across sources, such as a disk filling up while jobs that write to it fail.">Trends</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-waits.webp data-text="Waits per partition, how jobs failed, and jobs that held far more cores than they used." data-alt="Queue waits: Waits per partition, how jobs failed, and jobs that held far more cores than they used.">Queue waits</button>
+<button type=button class=tour-view aria-pressed=false data-src=/images/console-network.webp data-text="Each finished job linked to the jobs most like it, so failures that cluster together stand out." data-alt="Job similarity: Each finished job linked to the jobs most like it, so failures that cluster together stand out.">Job similarity</button></div><figure class=tour-stage><a class=frame href=/images/console-overview.webp target=_blank rel=noopener title="Open the full-size screenshot"><div class=frame-bar aria-hidden=true><span></span><span></span><span></span></div><img class=tour-img src=/images/console-overview.webp width=2160 height=1350 loading=lazy alt="Overview: Nodes, cores, memory and GPUs in use now, how jobs ended over the period, and who used the most."></a><figcaption class=tour-caption aria-live=polite>Nodes, cores, memory and GPUs in use now, how jobs ended over the period, and who used the most.</figcaption></figure></div></section><section class="section advice" id=advice aria-labelledby=advice-title><div class=section-head><h2 id=advice-title>Advice a person can act on</h2><p>NØMAÐ compares what each job asked for with what it used, and tells the person what to change, in words a first-year student can follow.</p></div><div class=advice-grid><figure class=advice-mail><img src=/images/email-weekly.webp width=1444 height=1514 loading=lazy alt="A weekly email from Research Computing: on the highmem partition, 5 of the last 8 completed jobs asked for 2 cores and most used about 1. Ask for #SBATCH --cpus-per-task=1 instead, because cores held but unused make other jobs wait."><figcaption>The weekly email, made with <code>nomad notices mail</code>.</figcaption></figure><div class=advice-points><dl><dt>What it saw, in numbers they can check</dt><dd>Which jobs, on which partition, what they asked for and what most of them used.</dd><dt>The line to change</dt><dd>The <code>#SBATCH</code> value to ask for instead, not a lecture about efficiency.</dd><dt>Why, in one sentence</dt><dd>Cores held but unused make other people's jobs wait. Asking for far more time is mentioned only when it made the person wait.</dd><dt>Weekly at most, and easy to stop</dt><dd>An email goes only when there is something new. People turn it off from the Console; accounts that exist only for a course are left out.</dd></dl><figure class=advice-cli><img src=/images/cli-explain.webp width=1284 height=1330 loading=lazy alt="Terminal output of nomad edu explain 1653: scores for CPU 72, memory 89, time limit 65 and I/O 25, the advice to keep heavy I/O off shared storage, and how each score moved over the last 30 jobs."><figcaption>The same advice on the cluster: <code>nomad edu explain JOB</code> and <code>nomad edu me</code>.</figcaption></figure></div></div></section><section class="section watches" id=watches aria-labelledby=watches-title><div class=section-head><h2 id=watches-title>What it keeps an eye on</h2><p>Each collector can be turned on or off per machine, and its thresholds live in <code>nomad.toml</code>, so another center can set its own.</p></div><div class=watch-list><section><h3>Jobs and queues</h3><p>Slurm jobs and waits, counted from when a job could start, with a job array counted once. Jobs that fail at start and jobs running past their limit. Guests on a lab's condo are told when the owners need the nodes back, and whether their job will survive a requeue.</p></section><section><h3>Nodes and hardware</h3><p>CPU, memory and GPUs (real utilisation from DCGM), temperatures, power supplies, fans, and how fast each CPU really runs when busy. Draining and resuming a node from the Console, always as a dry run first.</p></section><section><h3>Interactive servers and login nodes</h3><p>RStudio and Jupyter sessions left idle or holding the most memory, with actions such as restarting a person's session. Heavy work on a login node is told to the person, with the better way.</p></section><section><h3>Lab workstations and storage</h3><p>Departmental workstations, read over ssh from one machine. Who holds what on each storage server, and data left unchanged for a year, with a ready-made note to its owner that staff can send.</p></section><section><h3>Work from the browser</h3><p>Submit a job sized from past runs, see where it would start soonest, run it again, start from a template, and move or copy files between machines. The Console does it as the person, through <code>nomad-gate</code>.</p></section><section><h3>Labs, courses and reports</h3><p>PIs confirm who is in their lab and request accounts from the Console. Term reports for each lab, monthly condo reports for owners, and a usage report for administrators.</p></section><section><h3>Policy watch</h3><p>Tunnels, proxies, miners, GPUs served to the network, AI agents driving a cluster, and job patterns such as bursts and fail-fast loops. It reads and reports; it never stops anything.</p></section><section><h3>Software licenses</h3><p>When each license ends, a reminder before it does, and a small test of whether each licensed program still runs on each machine.</p></section><section><h3>Itself</h3><p>Sites that stop reporting, maintenance windows declared ahead, and the size and growth of its own databases. <code>nomad metrics serve</code> publishes each site's latest readings for Prometheus, and a Grafana dashboard comes with it.</p></section></div></section><section class="section principles" aria-labelledby=principles-title><div class=section-head><h2 id=principles-title>Honest about what it knows</h2></div><div class=principle-list><div class=principle><h3>It says when it doesn't know</h3><p>Pages say what period their numbers cover and how old the latest reading is. A site that goes quiet raises an alert, and something nobody measures is listed as not monitored, never shown in green.</p></div><div class=principle><h3>It speaks plainly</h3><p>"Running out of memory, moving data to and from disk", not "thrashing". Advice names the jobs it is about and the value to ask for.</p></div><div class=principle><h3>It never runs as root</h3><p>Collectors run as ordinary accounts. When the Console acts on a cluster, it acts as the person who asked, with that person's own permissions there.</p></div><div class=principle><h3>It shows people what is theirs to see</h3><p>A student sees their own work, a PI their lab, an instructor their class, staff everyone. Who was shown advice is counted for staff, never named.</p></div><div class=principle><h3>It travels light</h3><p>Python, SQLite and a TOML file. No message queue or time-series database to run.</p></div></div></section><section class="section how" id=how aria-labelledby=how-title><div class=section-head><h2 id=how-title>How it fits together</h2><p>A small center can run all three parts on one machine; a larger one spreads them out.</p></div><div class=how-stack><div class=how-diagram><svg class="arch" viewBox="-34 0 1194 478" role="img" aria-labelledby="arch-title arch-desc"><title id="arch-title">How NØMAÐ's parts fit together</title><desc id="arch-desc">Each site, a cluster, an interactive server, lab workstations or a storage server, runs nomad collect into its own database. The hub runs nomad sync to gather them into one combined database. The Console, emails, reports and Prometheus metrics read that database. The Console acts on a cluster as the person through nomad-gate.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="arch-arrowhead"/></marker></defs><text x="0" y="18" class="arch-col">Sites<tspan class="arch-cmd" dx="12">nomad collect</tspan></text><text x="416" y="18" class="arch-col">Hub<tspan class="arch-cmd" dx="12">nomad sync</tspan></text><text x="800" y="18" class="arch-col">What people see</text><g class="arch-site"><rect x="0" y="40" width="300" height="78" rx="10"/><text x="20" y="70" class="arch-name">HPC cluster</text><text x="20" y="94" class="arch-note">Slurm, nodes, GPUs, temperatures</text></g><g class="arch-site"><rect x="0" y="134" width="300" height="78" rx="10"/><text x="20" y="164" class="arch-name">Interactive server</text><text x="20" y="188" class="arch-note">RStudio and Jupyter sessions</text></g><g class="arch-site"><rect x="0" y="228" width="300" height="78" rx="10"/><text x="20" y="258" class="arch-name">Lab workstations</text><text x="20" y="282" class="arch-note">read over ssh from one machine</text></g><g class="arch-site"><rect x="0" y="322" width="300" height="78" rx="10"/><text x="20" y="352" class="arch-name">Storage servers</text><text x="20" y="376" class="arch-note">who holds what, and where</text></g><g class="arch-flow"><path d="M3e2 79c60 0 60 126 114 136" marker-end="url(#arrow)"/><path d="M3e2 173c60 0 60 39 114 47" marker-end="url(#arrow)"/><path d="M3e2 267c60 0 60-39 114-41" marker-end="url(#arrow)"/><path d="M3e2 361c60 0 60-126 114-130" marker-end="url(#arrow)"/></g><g class="arch-hub"><rect x="416" y="132" width="288" height="176" rx="12"/><text x="438" y="166" class="arch-name">Gathers the sites</text><text x="438" y="192" class="arch-note">copies each site's database safely,</text><text x="438" y="212" class="arch-note">merges them, and notes which sites</text><text x="438" y="232" class="arch-note">answered and which went quiet</text><path d="M470 258v26a90 11 0 00180 0v-26" class="arch-db"/><ellipse cx="560" cy="258" rx="90" ry="11" class="arch-db"/><text x="560" y="281" class="arch-dbtext" text-anchor="middle">combined database</text></g><g class="arch-flow"><path d="M704 210c46 0 46-131 94-131" marker-end="url(#arrow)"/><path d="M704 218c46 0 46-45 94-45" marker-end="url(#arrow)"/><path d="M704 226c46 0 46 41 94 41" marker-end="url(#arrow)"/></g><g class="arch-out arch-out-main"><rect x="800" y="40" width="320" height="78" rx="10"/><text x="820" y="70" class="arch-name">Console</text><text x="820" y="94" class="arch-note">each person sees what their role allows</text></g><g class="arch-out"><rect x="800" y="134" width="320" height="78" rx="10"/><text x="820" y="164" class="arch-name">Email</text><text x="820" y="188" class="arch-note">weekly notes, alerts, term reports</text></g><g class="arch-out"><rect x="800" y="228" width="320" height="78" rx="10"/><text x="820" y="258" class="arch-name">Prometheus and Grafana</text><text x="820" y="282" class="arch-note">nomad metrics serve</text></g><g class="arch-gate"><path d="M1120 79h26V448H-22V79H-4" marker-end="url(#arrow)"/><text x="560" y="438" text-anchor="middle" class="arch-gatetext">nomad-gate: the Console submits jobs and moves files as the person, never as root</text></g></svg></div><ol class=how-steps><li><h3>Collect</h3><p>On each site, such as a cluster's head node, an interactive server, or a machine that reaches the lab workstations, <code>nomad collect</code> writes what it reads to the site's own SQLite database.</p></li><li><h3>Sync</h3><p>The hub runs <code>nomad sync</code> on a timer: it copies each site's database safely, merges them, and records which sites answered, which came from cache and which went quiet.</p></li><li><h3>Serve</h3><p>The Console, the emails and the reports read the hub's combined database. <code>nomad metrics serve</code> answers Prometheus.</p></li></ol></div></section><section class="section start" id=start aria-labelledby=start-title><div class=section-head><h2 id=start-title>Get started</h2><p>NØMAÐ needs Python 3.10 or later. Slurm, sysstat and NVIDIA's tools are used where they are installed.</p></div><div class=start-grid><div class=start-card><h3>Try it with made-up data</h3><p>A synthetic cluster with jobs, nodes, alerts and storage, on your own computer.</p><pre class=code><code id=code-demo>pip install nomad-hpc
+nomad demo</code></pre><button class=copy type=button data-copy=#code-demo>Copy</button><p>For the Console, <code>nomad demo --console ~/nomad-demo</code> makes a demo with six people to sign in as: a student, a research assistant, a PI, an instructor, an operator and an admin.</p></div><div class=start-card><h3>Set it up on your systems</h3><p>The setup wizard detects the tools on the machine and asks about the rest.</p><pre class=code><code id=code-setup>nomad init
+nomad collect
+nomad sync</code></pre><button class=copy type=button data-copy=#code-setup>Copy</button><p>Run <code>nomad init</code> and <code>nomad collect</code> on each site, and <code>nomad sync</code> on the hub. The <a href=https://jtonini.github.io/nomad-hpc/installation/ target=_blank rel=noopener>installation guide</a> covers timers, accounts and the hub.</p></div><div class=start-card><h3>The Console</h3><p>A FastAPI and React web application that reads the hub's database. It is free software under AGPL-3.0, like the rest of NØMAÐ.</p><p>It listens only on its own machine. People reach it through your web server, or through an SSH tunnel that <code>nomad console launch</code> opens for them.</p></div></div></section><section class="section cite" id=cite aria-labelledby=cite-title><div class=section-head><h2 id=cite-title>Research and citation</h2><p>NØMAÐ is peer-reviewed research software. Its optional failure prediction trains TESSERA, a similarity-network classifier, and reports it beside a simple rule so you can see whether it earns its place.</p></div><div class=cite-grid><article class=paper><p class=paper-journal><em>Journal of Open Research Software</em> 14: 17 (2026)</p><h3><a href=https://doi.org/10.5334/jors.686 target=_blank rel=noopener>NØMAD: Lightweight HPC Monitoring and Diagnostics with Machine Learning-Based Failure Prediction</a></h3><p>João Filipe Riva Tonini</p><p class=paper-links><a href=https://doi.org/10.5334/jors.686 target=_blank rel=noopener>doi:10.5334/jors.686</a> <a href=https://doi.org/10.5281/zenodo.18614517 target=_blank rel=noopener>Software archive on Zenodo</a></p></article><div class=bibtex><pre class=code><code id=code-bib>@article{tonini2026nomad,
+  author  = {Tonini, Jo{\~a}o Filipe Riva},
+  title   = {{N{\O}MAD}: Lightweight {HPC} Monitoring and Diagnostics
+             with Machine Learning-Based Failure Prediction},
+  journal = {Journal of Open Research Software},
+  volume  = {14},
+  pages   = {17},
+  year    = {2026},
+  doi     = {10.5334/jors.686}
+}</code></pre><button class=copy type=button data-copy=#code-bib>Copy BibTeX</button></div></div></section></main><footer class=site-footer><div class=footer-inner><div class=footer-mark><svg class="footer-wordmark" viewBox="-6 -34 1002 168" role="img" aria-label="NØMAÐ" focusable="false"><g fill="none" stroke="currentColor" stroke-width="11" stroke-miterlimit="10"><path d="M10 1e2V0l95 1e2V0"/><circle cx="270" cy="50" r="50"/><path d="M440 1e2V0l65 84 65-84v1e2"/><path d="M660 1e2 717.5.0 775 1e2"/><path d="M872 0v1e2h48a50 50 0 000-1e2z"/><path d="M842 50h63"/></g><g fill="none" stroke="var(--cyan, #5fd3e6)" stroke-width="8" stroke-linecap="round"><path d="M228 124 298-22"/></g></svg><p>NØde Monitoring And Ðiagnostics. Version 1.62.0, November 2026.</p></div><nav class=footer-links aria-label=Project><a href=https://jtonini.github.io/nomad-hpc/ target=_blank rel=noopener>Documentation</a>
+<a href=https://github.com/jtonini/nomad-hpc target=_blank rel=noopener>Source on GitHub</a>
+<a href=https://pypi.org/project/nomad-hpc/ target=_blank rel=noopener>PyPI</a>
+<a href=https://github.com/jtonini/nomad-hpc/blob/main/docs/changelog.md target=_blank rel=noopener>Changelog</a>
+<a href=https://github.com/jtonini/nomad-hpc/issues target=_blank rel=noopener>Report a problem</a></nav></div><p class=footer-legal>© 2024–2026 João Tonini. NØMAÐ is free software under the GNU Affero General Public License v3.0.</p></footer><script src=/js/site.js defer></script></body></html>

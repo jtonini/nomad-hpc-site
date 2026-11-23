@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Site.Params.name }}: {{ .Site.Params.tagline }}</title>
     <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ .Site.Params.name }}: {{ .Site.Params.tagline }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ "images/og.jpg" | absURL }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#08101a">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preload" href="/fonts/jost-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tenor+Sans&family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a class="skip" href="#main">Skip to the content</a>
     {{ partial "header.html" . }}
-    <main>
+    <main id="main">
         {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
+    <script src="/js/site.js" defer></script>
 </body>
 </html>

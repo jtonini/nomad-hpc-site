@@ -1,22 +1,18 @@
+{{- $p := .Site.Params -}}
 <footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-section">
-            <h4>Links</h4>
-            <ul>
-                <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="{{ .Site.Params.docs }}" target="_blank" rel="noopener">Documentation</a></li>
-                <li><a href="https://pypi.org/project/nomad-hpc/" target="_blank" rel="noopener">PyPI</a></li>
-            </ul>
+    <div class="footer-inner">
+        <div class="footer-mark">
+            {{ partial "wordmark.html" (dict "class" "footer-wordmark" "compact" true) }}
+            <p>{{ $p.expansion }}. Version {{ $p.version }}, {{ $p.released }}.</p>
         </div>
-        <div class="footer-section">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="{{ .Site.Params.github }}/issues" target="_blank" rel="noopener">Report Issue</a></li>
-                <li><a href="mailto:jtonini@richmond.edu">Contact</a></li>
-            </ul>
-        </div>
+        <nav class="footer-links" aria-label="Project">
+            <a href="{{ $p.docs }}" target="_blank" rel="noopener">Documentation</a>
+            <a href="{{ $p.github }}" target="_blank" rel="noopener">Source on GitHub</a>
+            <a href="{{ $p.pypi }}" target="_blank" rel="noopener">PyPI</a>
+            <a href="{{ $p.github }}/blob/main/docs/changelog.md" target="_blank" rel="noopener">Changelog</a>
+            <a href="{{ $p.github }}/issues" target="_blank" rel="noopener">Report a problem</a>
+            {{ with $p.contact }}<a href="mailto:{{ . }}">Contact</a>{{ end }}
+        </nav>
     </div>
-    <div class="footer-bottom">
-        <p>© 2024-{{ now.Year }} João Tonini. All rights reserved. Licensed under AGPL-3.0.</p>
-    </div>
+    <p class="footer-legal">© 2024–{{ now.Year }} João Tonini. NØMAÐ is free software under the GNU Affero General Public License v3.0.</p>
 </footer>

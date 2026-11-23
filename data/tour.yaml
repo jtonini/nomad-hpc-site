@@ -1,0 +1,58 @@
+# The Console tour on the home page: one tab per audience, one entry per view.
+# Images are in static/images, taken from `nomad demo --console` (made-up people).
+- id: researchers
+  tab: Researchers and students
+  intro: Their own jobs and sessions, what went wrong, and what to ask for next time.
+  views:
+    - title: My jobs
+      image: console-my-jobs.webp
+      text: Jobs running and waiting now, then the ones that ended, each with how many of the cores and how much of the memory it asked for it used.
+    - title: A job's page
+      image: console-job.webp
+      text: "What the job asked for beside what it used, why it ended, and the #SBATCH lines to ask for next time."
+    - title: How I'm doing
+      image: console-doing.webp
+      text: Scores for cores, memory, time and I/O over 90 days, which way each is moving, and what would help most.
+
+- id: pis
+  tab: PIs
+  intro: Their lab's people, jobs, storage and share of each cluster. Instructors get the same for their classes.
+  views:
+    - title: My lab
+      image: console-lab.webp
+      text: Who is in the lab, what needs attention now, and each member's jobs, cores, memory and waits.
+    - title: Cluster use
+      image: console-lab-share.webp
+      text: The lab's share of each cluster, its own condo and the shared nodes, and how often its people waited for room.
+    - title: Term report
+      image: console-term-report.webp
+      text: What the lab used this term. It is emailed to the PI on the first day of each term, with a PDF copy.
+
+- id: staff
+  tab: Research computing staff
+  intro: Every cluster, server and workstation at once, and what needs attention first.
+  views:
+    - title: Overview
+      image: console-overview.webp
+      text: Nodes, cores, memory and GPUs in use now, how jobs ended over the period, and who used the most.
+    - title: Busy times
+      image: console-busy.webp
+      text: Every monitored system on one page, and when each is busiest in a typical week.
+    - title: Nodes
+      image: console-nodes.webp
+      text: Click a node for the jobs on it now, whose they are, and the last jobs that ended there.
+    - title: Interactive servers
+      image: console-interactive.webp
+      text: RStudio and Jupyter sessions, idle ones held open for a day or more, and the ones holding the most memory.
+    - title: Alerts
+      image: console-alerts.webp
+      text: What needs attention at every site, most serious first. Click an alert for its history.
+    - title: Trends
+      image: console-trends.webp
+      text: Findings linked across sources, such as a disk filling up while jobs that write to it fail.
+    - title: Queue waits
+      image: console-waits.webp
+      text: Waits per partition, how jobs failed, and jobs that held far more cores than they used.
+    - title: Job similarity
+      image: console-network.webp
+      text: Each finished job linked to the jobs most like it, so failures that cluster together stand out.

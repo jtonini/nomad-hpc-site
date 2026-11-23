@@ -1,38 +1,60 @@
-baseURL = 'https://nomad-hpc.io/'
+baseURL = 'https://nomad-hpc.com/'
 languageCode = 'en-us'
-title = 'NØMAD-HPC'
+title = 'NØMAÐ-HPC'
+disableKinds = ['taxonomy', 'term', 'RSS']
 
 [params]
-  tagline = "NØde Monitoring And Diagnostics for HPC"
-  description = "Open-source monitoring, analysis, and diagnostics for High-Performance Computing clusters"
-  github = "https://github.com/jtonini/nomad"
+  name = "NØMAÐ"
+  expansion = "NØde Monitoring And Ðiagnostics"
+  tagline = "Open-source monitoring and diagnostics for HPC clusters"
+  description = "NØMAÐ watches HPC clusters, interactive servers, lab workstations and storage, and turns what it sees into plain answers for researchers, PIs and research computing staff."
+  version = "1.62.0"
+  released = "November 2026"
+  github = "https://github.com/jtonini/nomad-hpc"
   docs = "https://jtonini.github.io/nomad-hpc/"
-  
+  pypi = "https://pypi.org/project/nomad-hpc/"
+  paper = "https://doi.org/10.5334/jors.686"
+  zenodo = "https://doi.org/10.5281/zenodo.18614517"
+  # An address for "Contact" in the footer; left empty, people are sent to
+  # GitHub issues instead (an institutional address would name the institution).
+  contact = ""
+  # The Console's source, once its repository is public. Left empty, the
+  # Get started section describes the Console without linking to it.
+  console_repo = ""
+
 [markup.goldmark.renderer]
   unsafe = true
 
 [menu]
   [[menu.main]]
-    name = "Features"
-    url = "#features"
+    name = "Console"
+    url = "/#console"
     weight = 1
   [[menu.main]]
-    name = "Screenshots"
-    url = "#screenshots"
+    name = "Advice"
+    url = "/#advice"
     weight = 2
   [[menu.main]]
-    name = "Get Started"
-    url = "#quickstart"
+    name = "What it watches"
+    url = "/#watches"
     weight = 3
   [[menu.main]]
+    name = "How it works"
+    url = "/#how"
+    weight = 4
+  [[menu.main]]
+    name = "Get started"
+    url = "/#start"
+    weight = 5
+  [[menu.main]]
     name = "Cite"
-    url = "#cite"
+    url = "/#cite"
     weight = 6
   [[menu.main]]
-    name = "Documentation"
-    url = "https://jtonini.github.io/nomad/"
-    weight = 6
+    name = "Docs"
+    url = "https://jtonini.github.io/nomad-hpc/"
+    weight = 7
   [[menu.main]]
     name = "GitHub"
-    url = "https://github.com/jtonini/nomad"
-    weight = 6
+    url = "https://github.com/jtonini/nomad-hpc"
+    weight = 8

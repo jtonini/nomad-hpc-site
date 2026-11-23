@@ -1,0 +1,23 @@
+{{- /* The NØMAÐ wordmark, drawn as lines so it stays sharp at any size.
+     Letters take the text colour; the circuit through the Ø is the brand cyan.
+     (dict "class" "..." "compact" true) gives the small version for the menu bar. */ -}}
+{{- $compact := .compact | default false -}}
+{{- if $compact -}}
+<svg class="{{ .class }}" viewBox="-6 -34 1002 168" role="img" aria-label="NØMAÐ" focusable="false">
+<g fill="none" stroke="currentColor" stroke-width="11" stroke-miterlimit="10">
+<path d="M10 100V0l95 100V0"/><circle cx="270" cy="50" r="50"/><path d="M440 100V0l65 84 65-84v100"/><path d="M660 100l57.5-100 57.5 100"/><path d="M872 0v100h48a50 50 0 0 0 0-100z"/><path d="M842 50h63"/>
+</g>
+<g fill="none" stroke="var(--cyan, #5fd3e6)" stroke-width="8" stroke-linecap="round">
+<path d="M228 124 298-22"/>
+</g>
+</svg>
+{{- else -}}
+<svg class="{{ .class }}" viewBox="0 -135 990 315" role="img" aria-label="NØMAÐ" focusable="false">
+<g fill="none" stroke="currentColor" stroke-width="7.5" stroke-miterlimit="10">
+<path d="M10 100V0l95 100V0"/><circle cx="270" cy="50" r="50"/><path d="M440 100V0l65 84 65-84v100"/><path d="M660 100l57.5-100 57.5 100"/><path d="M872 0v100h48a50 50 0 0 0 0-100z"/><path d="M842 50h63"/>
+</g>
+<g fill="none" stroke="var(--cyan, #5fd3e6)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M219.3 151.8 303.7-65.8"/><path d="M320-77h52l20-48"/><circle cx="215" cy="163" r="12"/><circle cx="308" cy="-77" r="12"/>
+</g>
+</svg>
+{{- end -}}

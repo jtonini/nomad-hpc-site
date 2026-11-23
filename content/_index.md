@@ -1,3 +1,3 @@
 ---
-title: "NØMAD-HPC"
+title: "NØMAÐ-HPC"
 ---
