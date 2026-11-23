@@ -68,6 +68,12 @@
       <figcaption class="tour-caption" aria-live="polite">{{ .text }}</figcaption>
     </figure>
     {{ end }}
+    {{ with $role.also }}
+    <div class="tour-also">
+      <h3>{{ .title }}</h3>
+      <p>{{ .text }}</p>
+    </div>
+    {{ end }}
   </div>
   {{ end }}
 </section>
@@ -127,7 +133,7 @@
     </section>
     <section>
       <h3>Work from the browser</h3>
-      <p>Submit a job sized from past runs, see where it would start soonest, run it again, start from a template, and move or copy files between machines. The Console does it as the person, through <code>nomad-gate</code>.</p>
+      <p>Submit a job sized from past runs, see where it would start soonest, run it again or start from a template. Move files between a person's own computer and the clusters, and copy folders between machines, with nothing to install. The Console does it all as the person, through <code>nomad-gate</code>.</p>
     </section>
     <section>
       <h3>Labs, courses and reports</h3>

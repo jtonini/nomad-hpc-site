@@ -3,6 +3,9 @@
 - id: researchers
   tab: Researchers and students
   intro: Their own jobs and sessions, what went wrong, and what to ask for next time.
+  also:
+    title: Move files without scp
+    text: Drop files on the page to put them on a cluster, and download them back to your computer. Large files go in checked pieces and pick up where they stopped if the connection drops. Copy whole folders between machines too. Nothing extra to install, on Windows or anywhere else.
   views:
     - title: My jobs
       image: console-my-jobs.webp
